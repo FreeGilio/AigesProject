@@ -1,0 +1,12 @@
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\bin\Debug\net8.0\Aiges.Core.deps.json
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\bin\Debug\net8.0\Aiges.Core.dll
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\bin\Debug\net8.0\Aiges.Core.pdb
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.AssemblyInfoInputs.cache
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.AssemblyInfo.cs
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.csproj.CoreCompileInputs.cache
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.sourcelink.json
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.dll
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\refint\Aiges.Core.dll
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\Aiges.Core.pdb
+D:\Fontys\Semester2\ThirdTimesTheCharm\AigesProject\Aiges.Core\obj\Debug\net8.0\ref\Aiges.Core.dll

@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+}
+<body>
+    <div class="project-wrapper">
+        @foreach (var prj in Model)
+        {
+            <div class="project-container">
+                <div onclick="location.href='/Project/ProjectDetails?id=@prj.id'" class="char-name">                
+                    <p>
+                        <span class="char-name-color">@prj.title</span>
+                    </p>                
+                </div>
+            </div>
+        }
+    </div>
+</body>

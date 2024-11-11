@@ -5,9 +5,11 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aiges.MVC", "Aiges.MVC.csproj", "{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiges.Core", "..\Aiges.Core\Aiges.Core.csproj", "{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aiges.Core", "..\Aiges.Core\Aiges.Core.csproj", "{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiges.DataAccess", "..\Aiges.DataAccess\Aiges.DataAccess.csproj", "{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aiges.DataAccess", "..\Aiges.DataAccess\Aiges.DataAccess.csproj", "{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiges.Test", "..\Aiges.Test\Aiges.Test.csproj", "{8600511F-55E1-4358-A235-1D211583CC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8600511F-55E1-4358-A235-1D211583CC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8600511F-55E1-4358-A235-1D211583CC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8600511F-55E1-4358-A235-1D211583CC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8600511F-55E1-4358-A235-1D211583CC59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

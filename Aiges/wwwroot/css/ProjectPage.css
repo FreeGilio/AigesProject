@@ -1,0 +1,23 @@
+﻿.project-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to next line if needed */
+    justify-content: flex-start; /* Adjust alignment as needed */
+    gap: 10px; /* Adjust gap between character containers */
+}
+
+.project-container {
+    /* Optional: Adjust width and height of each character container */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Adjust height as needed */
+    border: 1px solid #ccc; /* Example border style */
+    padding: 10px; /* Example padding */
+    box-sizing: border-box; /* Include padding and border in total width */
+}
+
+
+.char-name {
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 1; /* Ensure name text is above the image */
+    margin-top: 5px; /* Adjust spacing */
+}

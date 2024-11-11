@@ -1,0 +1,19 @@
+﻿@model Aiges.Core.Models.Project
+
+@{
+    ViewData["Title"] = "ProjectDetails";
+}
+
+<body>
+    <div class="container">      
+        <div class="content">
+            <h2> @Model.title</h2>
+            <h4> @Model.tags</h4>
+            <h3>Category:</h3>
+            <h4>@Model.category.name</h4>
+            <h3>@Model.description</h3>   
+            <h4>@Model.projectFile</h4>
+            <h4>@Model.lastUpdated</h4>
+        </div>
+    </div>
+</body>

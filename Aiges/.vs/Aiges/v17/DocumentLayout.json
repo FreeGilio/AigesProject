@@ -3,41 +3,122 @@
   "WorkspaceRootPath": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\eventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\views\\project\\projectdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:views\\project\\projectdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\imagerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\views\\project\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:views\\project\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\wwwroot\\css\\projectpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:wwwroot\\css\\projectpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\projectrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\replyrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\iprojectrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\iprojectcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\projectcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\projectcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\projectcategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\imagerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\aiges.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\replyrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\projectcategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\aiges.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8600511F-55E1-4358-A235-1D211583CC59}|..\\Aiges.Test\\Aiges.Test.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.test\\aiges.test.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8600511F-55E1-4358-A235-1D211583CC59}|..\\Aiges.Test\\Aiges.Test.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.test\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\ieventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\db\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\repositories\\eventrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\ireplyrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\reply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\replyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges\\aiges.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{878FBB56-81D6-4F4A-A92B-FC2BCFDE2540}|Aiges.MVC.csproj|solutionrelative:aiges.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\db\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94B84624-A2CE-4A5F-AA84-3E0A2F5F6961}|..\\Aiges.DataAccess\\Aiges.DataAccess.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.dataaccess\\aiges.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\replyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\interfaces\\iimagerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\services\\eventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -49,31 +130,10 @@
       "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\imagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\projectdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\replydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\reply.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DF56F16-512C-4C1D-BC59-2B0DA60A7FF5}|..\\Aiges.Core\\Aiges.Core.csproj|d:\\fontys\\semester2\\thirdtimesthecharm\\aigesproject\\aiges.core\\aiges.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -88,38 +148,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EventRepo.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:29:08.517Z",
+              "Title": "ProjectDetails.cshtml",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Project\\ProjectDetails.cshtml",
+              "RelativeDocumentMoniker": "Views\\Project\\ProjectDetails.cshtml",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Project\\ProjectDetails.cshtml",
+              "RelativeToolTip": "Views\\Project\\ProjectDetails.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-11T09:44:02.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ImageRepo.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T12:28:47.417Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Project\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Project\\Index.cshtml",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Project\\Index.cshtml",
+              "RelativeToolTip": "Views\\Project\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-15T07:25:29.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-15T07:25:36.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectController.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "Controllers\\ProjectController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T07:24:57.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ProjectRepo.cs",
               "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ProjectRepo.cs",
               "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ProjectRepo.cs",
               "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ProjectRepo.cs",
               "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ProjectRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAgwFoAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T10:06:17.904Z",
               "EditorCaption": ""
@@ -127,201 +213,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ReplyRepo.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:56:16.781Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserRepo.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:55:58.754Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DatabaseConnection.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:54:20.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\UserService.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\UserService.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Services\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:53:05.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ReplyService.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ReplyService.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ReplyService.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ReplyService.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Services\\ReplyService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:52:50.225Z",
+              "Title": "ProjectPage.css",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\ProjectPage.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\ProjectPage.css",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\ProjectPage.css",
+              "RelativeToolTip": "wwwroot\\css\\ProjectPage.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-11T09:39:25.514Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Aiges.MVC.csproj",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Aiges.MVC.csproj",
-              "RelativeDocumentMoniker": "Aiges.MVC.csproj",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Aiges.MVC.csproj",
-              "RelativeToolTip": "Aiges.MVC.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-14T07:41:00.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ImageService.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ImageService.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ImageService.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ImageService.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Services\\ImageService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:53:23.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Aiges.DataAccess",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
-              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
-              "RelativeToolTip": "..\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-14T07:46:47.486Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EventService.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\EventService.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\EventService.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\EventService.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Services\\EventService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:53:39.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "ProjectService.cs",
               "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ProjectService.cs",
               "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ProjectService.cs",
               "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ProjectService.cs",
               "RelativeToolTip": "..\\Aiges.Core\\Services\\ProjectService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T09:52:34.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EventDto.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\EventDto.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\EventDto.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\EventDto.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\DTO\\EventDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "IProjectRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IProjectRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IProjectRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IProjectRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IProjectRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:37:59.451Z",
+              "WhenOpened": "2024-10-15T07:15:10.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ImageDto.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ImageDto.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ImageDto.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ImageDto.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ImageDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "Project.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Project.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Project.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Models\\Project.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAADwvzsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:37:21.276Z",
+              "WhenOpened": "2024-10-14T09:00:02.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProjectDto.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectDto.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ProjectDto.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectDto.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ProjectDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "IProjectCategoryRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IProjectCategoryRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IProjectCategoryRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IProjectCategoryRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IProjectCategoryRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:37:01.42Z",
+              "WhenOpened": "2024-11-05T10:20:45.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ReplyDto.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ReplyDto.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ReplyDto.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ReplyDto.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ReplyDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:36:16.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\UserDto.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\UserDto.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\UserDto.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\DTO\\UserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:35:47.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 10,
               "Title": "Image.cs",
               "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Image.cs",
               "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Image.cs",
@@ -334,7 +290,220 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProjectCategory.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\ProjectCategory.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\ProjectCategory.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\ProjectCategory.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Models\\ProjectCategory.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA1wB0AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T10:10:59.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProjectDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ProjectDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ProjectDto.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:37:01.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProjectCategoryDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectCategoryDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ProjectCategoryDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ProjectCategoryDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ProjectCategoryDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T10:10:00.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProjectCategoryRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ProjectCategoryRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ProjectCategoryRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ProjectCategoryRepo.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ProjectCategoryRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T10:21:24.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ImageRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ImageRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:28:47.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Aiges.Core.csproj",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Aiges.Core.csproj",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Aiges.Core.csproj",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Aiges.Core.csproj",
+              "RelativeToolTip": "..\\Aiges.Core\\Aiges.Core.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-14T07:40:58.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\UserRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:55:58.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "ReplyRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\ReplyRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:56:16.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProjectCategoryService.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ProjectCategoryService.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ProjectCategoryService.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ProjectCategoryService.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Services\\ProjectCategoryService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T10:20:00.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T09:57:48.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Aiges.DataAccess.csproj",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Aiges.DataAccess.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-14T07:46:47.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Aiges.Test.csproj",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Test\\Aiges.Test.csproj",
+              "RelativeDocumentMoniker": "..\\Aiges.Test\\Aiges.Test.csproj",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Test\\Aiges.Test.csproj",
+              "RelativeToolTip": "..\\Aiges.Test\\Aiges.Test.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-06T12:27:39.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Test\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Test\\UnitTest1.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Test\\UnitTest1.cs",
+              "RelativeToolTip": "..\\Aiges.Test\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T12:27:28.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "IEventRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IEventRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IEventRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IEventRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IEventRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T07:12:41.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DatabaseConnection.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\DB\\DatabaseConnection.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:54:20.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EventRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
+              "RelativeToolTip": "..\\Aiges.DataAccess\\Repositories\\EventRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:29:08.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IReplyRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IReplyRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IReplyRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IReplyRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IReplyRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T07:15:44.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "Reply.cs",
               "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Reply.cs",
               "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Reply.cs",
@@ -342,38 +511,11 @@
               "RelativeToolTip": "..\\Aiges.Core\\Models\\Reply.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:21:44.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T09:21:44.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Event.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Event.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Event.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Event.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Models\\Event.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:21:35.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Project.cs",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Project.cs",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Project.cs",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Project.cs",
-              "RelativeToolTip": "..\\Aiges.Core\\Models\\Project.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:00:02.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\User.cs",
               "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\User.cs",
@@ -381,21 +523,151 @@
               "RelativeToolTip": "..\\Aiges.Core\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T08:12:03.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T08:12:03.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Aiges.Core",
-              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Aiges.Core.csproj",
-              "RelativeDocumentMoniker": "..\\Aiges.Core\\Aiges.Core.csproj",
-              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Aiges.Core.csproj",
-              "RelativeToolTip": "..\\Aiges.Core\\Aiges.Core.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "DocumentIndex": 30,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Models\\Event.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Models\\Event.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Models\\Event.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:21:35.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\UserService.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Services\\UserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:53:05.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ReplyService.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ReplyService.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ReplyService.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ReplyService.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Services\\ReplyService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:52:50.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ImageService.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ImageService.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\ImageService.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\ImageService.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Services\\ImageService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:53:23.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Aiges.MVC.csproj",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Aiges.MVC.csproj",
+              "RelativeDocumentMoniker": "Aiges.MVC.csproj",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\Aiges.MVC.csproj",
+              "RelativeToolTip": "Aiges.MVC.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-14T07:40:58.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-14T07:41:00.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IUserRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IUserRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IUserRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T07:16:11.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IImageRepo.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IImageRepo.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Interfaces\\IImageRepo.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Interfaces\\IImageRepo.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Interfaces\\IImageRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T07:14:38.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "EventService.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\EventService.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\Services\\EventService.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\Services\\EventService.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\Services\\EventService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:53:39.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "EventDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\EventDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\EventDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\EventDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\EventDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:37:59.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ImageDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ImageDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ImageDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ImageDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ImageDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:37:21.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ReplyDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ReplyDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\ReplyDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\ReplyDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\ReplyDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:36:16.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\UserDto.cs",
+              "RelativeDocumentMoniker": "..\\Aiges.Core\\DTO\\UserDto.cs",
+              "ToolTip": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges.Core\\DTO\\UserDto.cs",
+              "RelativeToolTip": "..\\Aiges.Core\\DTO\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:35:47.366Z"
             }
           ]
         }
