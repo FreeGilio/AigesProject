@@ -43,21 +43,19 @@ namespace Aiges.DataAccess.Repositories
                     ProjectCategory pc ON p.category_id = pc.Id
                 WHERE 
                     p.id = @Id";
-                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
-                {
-                    command.Parameters.Add(new SqlParameter("@Id", projectId));
+                using SqlCommand command = new SqlCommand(sql, (SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@Id", projectId));
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
                     {
-                        if (reader.Read())
+                        if (string.IsNullOrEmpty(reader.GetString(1)))
                         {
-                            if (string.IsNullOrEmpty(reader.GetString(1)))
-                            {
-                            }
-                            else
-                            {
-                                result = MapProjectDtoFromReader(reader);
-                            }
+                        }
+                        else
+                        {
+                            result = MapProjectDtoFromReader(reader);
                         }
                     }
                 }
@@ -107,17 +105,17 @@ namespace Aiges.DataAccess.Repositories
         {
             return new ProjectDto
             {
-                id = (int)reader["Id"],
-                title = (string)reader["title"],
-                tags = (string)reader["tags"],
-                description = (string)reader["description"],
-                concept = (bool)reader["concept"],
-                projectFile = (string)reader["projectfile"],
-                lastUpdated = (DateTime)reader["last_updated"],
-                category = new ProjectCategory
+                Id = (int)reader["Id"],
+                Title = (string)reader["title"],
+                Tags = (string)reader["tags"],
+                Description = (string)reader["description"],
+                Concept = (bool)reader["concept"],
+                ProjectFile = (string)reader["projectfile"],
+                LastUpdated = (DateTime)reader["last_updated"],
+                Category = new ProjectCategory
                 {
-                    id = (int)reader["CategoryId"],
-                    name = (string)reader["name"],
+                    Id = (int)reader["CategoryId"],
+                    Name = (string)reader["name"],
                 }
             };
         }

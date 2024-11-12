@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Aiges.MVC.Models.ProjectViewModel>
+
+@{
     ViewData["Title"] = "Projects";
 }
 <body>
@@ -6,9 +8,9 @@
         @foreach (var prj in Model)
         {
             <div class="project-container">
-                <div onclick="location.href='/Project/ProjectDetails?id=@prj.id'" class="char-name">                
+                <div onclick="location.href='/Project/ProjectDetails?id=@prj.Id'" class="char-name">                
                     <p>
-                        <span class="char-name-color">@prj.title</span>
+                        <span class="char-name-color">@prj.Title</span>
                     </p>                
                 </div>
             </div>

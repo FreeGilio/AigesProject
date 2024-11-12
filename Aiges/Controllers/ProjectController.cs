@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Aiges.Core.Models;
 using Aiges.Core.Services;
+using Aiges.MVC.Models;
 
 namespace Aiges.MVC.Controllers
 {
@@ -13,15 +13,36 @@ namespace Aiges.MVC.Controllers
             this.projectService = projectService;
         }
 
-        public ActionResult ProjectDetails(int id)
-        {
-            Project projectModel = projectService.GetProjectById(id);
-            return View(projectModel);
-        }
         public IActionResult Index()
         {
             var projects = projectService.GetAllProjects();
-            return View(projects);
-        }    
+
+            var projectViewModel = projects.Select(project => new ProjectViewModel
+            {
+                Id = project.Id,
+                Title = project.Title,
+                Tags = project.Tags,
+            }).ToList();
+
+            return View(projectViewModel);
+        }
+
+        public ActionResult ProjectDetails(int id)
+        {
+            var project = projectService.GetProjectById(id);
+
+            var projectDetailsViewModel = new ProjectDetailsViewModel
+            {
+                Id = project.Id,
+                Title = project.Title,
+                Tags = project.Tags,
+                Description = project.Description,
+                ProjectFile = project.ProjectFile,
+                LastUpdated = project.LastUpdated,
+                Category = project.Category,
+            };
+
+            return View(projectDetailsViewModel);
+        }
     }
 }

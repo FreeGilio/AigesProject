@@ -9,46 +9,46 @@ namespace Aiges.Core.Models
 {
     public class Project
     {
-        public int id { get; private set; }
+        public int Id { get; private set; }
 
-        public string title { get; private set; }
+        public string Title { get; private set; }
 
-        public string tags { get; private set; }
+        public string Tags { get; private set; }
 
-        public string description { get; private set; }
+        public string Description { get; private set; }
 
-        public bool concept { get; private set; }
+        public bool Concept { get; private set; }
 
-        public string projectFile { get; private set; }
+        public string ProjectFile { get; private set; }
 
-        public DateTime lastUpdated { get; private set; }
+        public DateTime LastUpdated { get; private set; }
 
-        public ProjectCategory category { get; set; }
+        public ProjectCategory Category { get; set; }
 
         public Project() { }
 
         public Project(int id, string title, string tags, string description, bool concept, string projectFile, DateTime lastUpdated, ProjectCategory category)
         {
-            this.id = id;
-            this.title = title;
-            this.tags = tags;
-            this.description = description;
-            this.concept = concept;
-            this.projectFile = projectFile;
-            this.lastUpdated = lastUpdated;
-            this.category = category;
+            this.Id = id;
+            this.Title = title;
+            this.Tags = tags;
+            this.Description = description;
+            this.Concept = concept;
+            this.ProjectFile = projectFile;
+            this.LastUpdated = lastUpdated;
+            this.Category = category;
         }
 
         public Project(ProjectDto projectDto)
         {
-            id = projectDto.id;
-            title = projectDto.title;
-            tags = projectDto.tags;
-            description = projectDto.description;
-            concept = projectDto.concept;
-            projectFile = projectDto.projectFile;
-            lastUpdated = projectDto.lastUpdated;
-            category = projectDto.category;
+            Id = projectDto.Id;
+            Title = projectDto.Title;
+            Tags = projectDto.Tags;
+            Description = projectDto.Description;
+            Concept = projectDto.Concept;
+            ProjectFile = projectDto.ProjectFile;
+            LastUpdated = projectDto.LastUpdated;
+            Category = projectDto.Category;
         }
 
         public static List<Project> ConvertToProjects(List<ProjectDto> projectDtos)

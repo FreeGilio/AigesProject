@@ -9,16 +9,16 @@ namespace Aiges.Core.DTO
 {
     public class ProjectCategoryDto
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public ProjectCategoryDto() { }
 
         public ProjectCategoryDto(ProjectCategory category)
         {
-            id = category.id;
-            name = category.name;
+            Id = category.Id;
+            Name = category.Name;
         }
     }
 }

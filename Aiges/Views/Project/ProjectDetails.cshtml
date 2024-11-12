@@ -1,4 +1,4 @@
-﻿@model Aiges.Core.Models.Project
+﻿@model Aiges.MVC.Models.ProjectDetailsViewModel
 
 @{
     ViewData["Title"] = "ProjectDetails";
@@ -7,13 +7,13 @@
 <body>
     <div class="container">      
         <div class="content">
-            <h2> @Model.title</h2>
-            <h4> @Model.tags</h4>
+            <h2> @Model.Title</h2>
+            <h4> @Model.Tags</h4>
             <h3>Category:</h3>
-            <h4>@Model.category.name</h4>
-            <h3>@Model.description</h3>   
-            <h4>@Model.projectFile</h4>
-            <h4>@Model.lastUpdated</h4>
+            <h4>@Model.Category.Name</h4>
+            <h3>@Model.Description</h3>   
+            <h4>@Model.ProjectFile</h4>
+            <h4>@Model.LastUpdated</h4>
         </div>
     </div>
 </body>

@@ -9,22 +9,22 @@ namespace Aiges.Core.Models
 {
     public class ProjectCategory
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public ProjectCategory() { }
 
-        public ProjectCategory(int Id, string Name)
+        public ProjectCategory(int id, string name)
         {
-            id = Id;
-            name = Name;
+            Id = id;
+            Name = name;
         }
 
         public ProjectCategory(ProjectCategoryDto categoryDto)
         {
-            id = categoryDto.id;
-            name = categoryDto.name;
+            Id = categoryDto.Id;
+            Name = categoryDto.Name;
         }
 
         public static List<ProjectCategory> MapToCategories(List<ProjectCategoryDto> categoryDtos)

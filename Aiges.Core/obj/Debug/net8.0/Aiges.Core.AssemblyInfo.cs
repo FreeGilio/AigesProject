@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aiges.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e9a21f8a758732bcea00273d802f1e5d5dd6cf4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02c9002ab0941c5f7b6d7ab14fa91218b5df0abc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aiges.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aiges.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

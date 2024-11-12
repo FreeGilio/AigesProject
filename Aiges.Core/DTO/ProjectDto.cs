@@ -9,34 +9,34 @@ namespace Aiges.Core.DTO
 {
     public class ProjectDto
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string title { get; set; }
+        public string Title { get; set; }
 
-        public string tags { get; set; }
+        public string Tags { get; set; }
 
-        public string description { get; set; }
+        public string Description { get; set; }
 
-        public bool concept { get; set; }
+        public bool Concept { get; set; }
 
-        public string projectFile { get; set; }
+        public string ProjectFile { get; set; }
 
-        public DateTime lastUpdated { get; set; }
+        public DateTime LastUpdated { get; set; }
 
-        public ProjectCategory category { get; set; }
+        public ProjectCategory Category { get; set; }
 
         public ProjectDto() { }
 
         public ProjectDto(Project project)
         {
-            id = project.id;
-            title = project.title;
-            tags = project.tags;
-            description = project.description;
-            concept = project.concept;
-            projectFile = project.projectFile;
-            lastUpdated = project.lastUpdated;
-            category = project.category;
+            Id = project.Id;
+            Title = project.Title;
+            Tags = project.Tags;
+            Description = project.Description;
+            Concept = project.Concept;
+            ProjectFile = project.ProjectFile;
+            LastUpdated = project.LastUpdated;
+            Category = project.Category;
         }      
     }
 }

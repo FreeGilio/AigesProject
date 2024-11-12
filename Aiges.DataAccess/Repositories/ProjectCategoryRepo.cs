@@ -74,8 +74,8 @@ namespace Aiges.DataAccess.Repositories
         {
             return new ProjectCategoryDto
             {
-                id = (int)reader["Id"],
-                name = (string)reader["Name"]
+                Id = (int)reader["Id"],
+                Name = (string)reader["Name"]
             };
         }
     }
