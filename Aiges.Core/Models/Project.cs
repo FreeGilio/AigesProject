@@ -9,19 +9,19 @@ namespace Aiges.Core.Models
 {
     public class Project
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public string Title { get; private set; }
+        public string Title { get; set; }
 
-        public string Tags { get; private set; }
+        public string Tags { get; set; }
 
-        public string Description { get; private set; }
+        public string Description { get;  set; }
 
-        public bool Concept { get; private set; }
+        public bool Concept { get;  set; }
 
-        public string ProjectFile { get; private set; }
+        public string ProjectFile { get; set; }
 
-        public DateTime LastUpdated { get; private set; }
+        public DateTime LastUpdated { get;  set; }
 
         public ProjectCategory Category { get; set; }
 
@@ -29,14 +29,14 @@ namespace Aiges.Core.Models
 
         public Project(int id, string title, string tags, string description, bool concept, string projectFile, DateTime lastUpdated, ProjectCategory category)
         {
-            this.Id = id;
-            this.Title = title;
-            this.Tags = tags;
-            this.Description = description;
-            this.Concept = concept;
-            this.ProjectFile = projectFile;
-            this.LastUpdated = lastUpdated;
-            this.Category = category;
+            Id = id;
+            Title = title;
+            Tags = tags;
+            Description = description;
+            Concept = concept;
+            ProjectFile = projectFile;
+            LastUpdated = lastUpdated;
+            Category = category;
         }
 
         public Project(ProjectDto projectDto)

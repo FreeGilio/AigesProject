@@ -3,17 +3,31 @@
 @{
     ViewData["Title"] = "Projects";
 }
+
 <body>
     <div class="project-wrapper">
         @foreach (var prj in Model)
         {
             <div class="project-container">
-                <div onclick="location.href='/Project/ProjectDetails?id=@prj.Id'" class="char-name">                
-                    <p>
-                        <span class="char-name-color">@prj.Title</span>
-                    </p>                
+                <div class="project-square" onclick="location.href='/Project/ProjectDetails?id=@prj.Id'">
+                    <div class="project-title">
+                        <span>@prj.Title</span>
+                    </div>
+                    <div class="project-tags">
+                        <span>@prj.Tags</span>
+                    </div>
                 </div>
             </div>
         }
     </div>
+
+    @if (Context.Session.GetInt32("uId") != null)
+    {
+        <div class="text-right" style="width: 80%; margin: 0 auto; padding: 20px;">
+
+            <a class="btn btn-primary" role="button" asp-controller="Project" asp-action="AddProject">
+                Upload project
+            </a>
+        </div>
+    } 
 </body>

@@ -9,6 +9,8 @@ namespace Aiges.Core.Interfaces
 {
     public interface IProjectCategoryRepo
     {
+        ProjectCategoryDto GetCategoryDtoById(int categoryId);
 
+        List<ProjectCategoryDto> GetAllCategories();
     }
 }

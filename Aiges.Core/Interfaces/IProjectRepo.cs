@@ -11,7 +11,11 @@ namespace Aiges.Core.Interfaces
     public interface IProjectRepo
     {
         ProjectDto GetProjectDtoById(int projectId);
+
+        public int AddProjectAsConceptDto(ProjectDto projectToAdd);
         List<ProjectDto> GetAllProjects();
+
+        List<ProjectDto> GetAllProjectsFromUser(int userId);
 
     }
 }

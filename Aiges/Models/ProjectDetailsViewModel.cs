@@ -1,4 +1,5 @@
 ﻿using Aiges.Core.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Aiges.MVC.Models
 {
@@ -16,6 +17,11 @@ namespace Aiges.MVC.Models
 
         public DateTime LastUpdated { get; set; }
 
-        public ProjectCategory Category { get; set; }
+        public bool Concept {  get; set; }
+
+        public ProjectCategory Category { get; set; } 
+
+
+
     }
 }

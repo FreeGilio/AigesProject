@@ -1,23 +1,56 @@
-﻿.project-wrapper {
-    display: flex;
-    flex-wrap: wrap; /* Wrap items to next line if needed */
-    justify-content: flex-start; /* Adjust alignment as needed */
-    gap: 10px; /* Adjust gap between character containers */
+﻿/* Container for the entire grid */
+.project-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid layout with auto-resizing columns */
+    gap: 20px; /* Space between the squares */
+    padding: 20px;
 }
 
+/* Each individual project square */
 .project-container {
-    /* Optional: Adjust width and height of each character container */
-    width: 200px; /* Adjust width as needed */
-    height: auto; /* Adjust height as needed */
-    border: 1px solid #ccc; /* Example border style */
-    padding: 10px; /* Example padding */
-    box-sizing: border-box; /* Include padding and border in total width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Style for the project square */
+.project-square {
+    width: 100%; /* Make each square responsive */
+    height: 250px; /* Fixed height to maintain square shape */
+    background-color: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-.char-name {
-    font-size: 2.2rem;
-    position: relative;
-    z-index: 1; /* Ensure name text is above the image */
-    margin-top: 5px; /* Adjust spacing */
+    /* Hover effect for project square */
+    .project-square:hover {
+        transform: translateY(-5px); /* Slight upward movement */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    }
+
+/* Title styling */
+.project-title span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Tags styling */
+.project-tags span {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.concept-note {
+    color: blue;
 }

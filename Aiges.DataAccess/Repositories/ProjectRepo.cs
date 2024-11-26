@@ -49,14 +49,8 @@ namespace Aiges.DataAccess.Repositories
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
-                    {
-                        if (string.IsNullOrEmpty(reader.GetString(1)))
-                        {
-                        }
-                        else
-                        {
-                            result = MapProjectDtoFromReader(reader);
-                        }
+                    {                                            
+                            result = MapProjectDtoFromReader(reader);                       
                     }
                 }
             });
@@ -101,23 +95,94 @@ namespace Aiges.DataAccess.Repositories
             return projects;
         }
 
+        public List<ProjectDto> GetAllProjectsFromUser(int userId)
+        {
+            List<ProjectDto> projects = new List<ProjectDto>();
+
+            databaseConnection.StartConnection(connection =>
+            {
+                string sql = @"
+                SELECT
+                    p.id as Id,
+                    p.title,
+                    p.tags,
+                    p.description,
+                    p.concept,
+                    p.projectfile,
+                    p.last_updated,
+                    pc.id as CategoryId,
+                    pc.name as name
+                FROM 
+                    Project p
+                LEFT JOIN
+                    ProjectCategory pc ON p.category_id = pc.Id
+                JOIN 
+                    Collaborator cb ON p.id = cb.project_id
+                WHERE 
+                    cb.user_id = @UserId;";
+
+                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@UserId", userId));
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            projects.Add(MapProjectDtoFromReader(reader));
+                        }
+                    }
+                }
+            });
+
+            return projects;
+        }
+
+        public int AddProjectAsConceptDto(ProjectDto projectToAdd)
+        {
+            int newProjectId = 0;
+
+            databaseConnection.StartConnection(connection =>
+            {
+                string insertSql = @"
+                          INSERT INTO project (title, category_id, tags, description, concept, projectfile, last_updated) 
+                          OUTPUT INSERTED.id
+                          VALUES (@Title, @Category_Id, @Tags, @Description, @Concept, @ProjectFile, @LastUpdated);";
+                using (SqlCommand insertCommand = new SqlCommand(insertSql, (SqlConnection)connection))
+                {
+                    insertCommand.Parameters.Add(new SqlParameter("@Title", projectToAdd.Title));
+                    insertCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToAdd.Category.Id));
+                    insertCommand.Parameters.Add(new SqlParameter("@Tags", projectToAdd.Tags));
+                    insertCommand.Parameters.Add(new SqlParameter("@Description", projectToAdd.Description));
+                    insertCommand.Parameters.Add(new SqlParameter("@Concept", true));
+                    insertCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToAdd.ProjectFile));
+                    insertCommand.Parameters.Add(new SqlParameter("@LastUpdated", DateTime.Now));
+
+                    newProjectId = (int)insertCommand.ExecuteScalar();
+
+                }
+            });
+            return newProjectId;
+        }
+
         private ProjectDto MapProjectDtoFromReader(SqlDataReader reader)
         {
             return new ProjectDto
             {
                 Id = (int)reader["Id"],
                 Title = (string)reader["title"],
-                Tags = (string)reader["tags"],
+                Tags = reader["tags"] != DBNull.Value ? (string)reader["tags"] : string.Empty,
                 Description = (string)reader["description"],
-                Concept = (bool)reader["concept"],
-                ProjectFile = (string)reader["projectfile"],
-                LastUpdated = (DateTime)reader["last_updated"],
+                Concept = reader["concept"] != DBNull.Value && (bool)reader["concept"],
+                ProjectFile = reader["projectfile"] != DBNull.Value ? (string)reader["projectfile"] : string.Empty,
+                LastUpdated = reader["last_updated"] != DBNull.Value ? (DateTime)reader["last_updated"] : DateTime.MinValue,
                 Category = new ProjectCategory
                 {
-                    Id = (int)reader["CategoryId"],
-                    Name = (string)reader["name"],
+                    Id = reader["CategoryId"] != DBNull.Value ? (int)reader["CategoryId"] : 0,
+                    Name = reader["name"] != DBNull.Value ? (string)reader["name"] : string.Empty,
                 }
             };
+
         }
     }
 }

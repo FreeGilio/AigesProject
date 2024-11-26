@@ -6,8 +6,12 @@ using Aiges.Core.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register DatabaseConnection
-builder.Services.AddSingleton<DatabaseConnection>(_ => new DatabaseConnection("Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=Aiges;Integrated Security=True"));
+// Register DatabaseConnection 
+builder.Services.AddSingleton<DatabaseConnection>(provider =>
+{
+    string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    return new DatabaseConnection(connectionString);
+});
 
 //Register repositories
 builder.Services.AddScoped<IProjectRepo,ProjectRepo>();
@@ -19,10 +23,19 @@ builder.Services.AddScoped<IReplyRepo, ReplyRepo>();
 
 //Register services
 builder.Services.AddScoped<ProjectService>();
+builder.Services.AddScoped<ProjectCategoryService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<ImageService>();
 builder.Services.AddScoped<EventService>();
 builder.Services.AddScoped<ReplyService>();
+
+// Configure session with a longer timeout
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(1);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -43,6 +56,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Aiges.Core.Services;
 using Aiges.MVC.Models;
+using Aiges.Core.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Aiges.Core.DTO;
 
 namespace Aiges.MVC.Controllers
 {
@@ -8,16 +11,18 @@ namespace Aiges.MVC.Controllers
     {
 
         private readonly ProjectService projectService;
-        public ProjectController(ProjectService projectService)
+        private readonly ProjectCategoryService projectCategoryService;
+        public ProjectController(ProjectService projectService, ProjectCategoryService projectCategoryService)
         {
             this.projectService = projectService;
+            this.projectCategoryService = projectCategoryService;
         }
 
         public IActionResult Index()
         {
-            var projects = projectService.GetAllProjects();
+            List<Project> projects = projectService.GetAllProjects();
 
-            var projectViewModel = projects.Select(project => new ProjectViewModel
+            List<ProjectViewModel> projectViewModel = projects.Select(project => new ProjectViewModel
             {
                 Id = project.Id,
                 Title = project.Title,
@@ -29,9 +34,9 @@ namespace Aiges.MVC.Controllers
 
         public ActionResult ProjectDetails(int id)
         {
-            var project = projectService.GetProjectById(id);
+            Project project = projectService.GetProjectById(id);
 
-            var projectDetailsViewModel = new ProjectDetailsViewModel
+            ProjectDetailsViewModel projectDetailsViewModel = new ProjectDetailsViewModel
             {
                 Id = project.Id,
                 Title = project.Title,
@@ -39,10 +44,47 @@ namespace Aiges.MVC.Controllers
                 Description = project.Description,
                 ProjectFile = project.ProjectFile,
                 LastUpdated = project.LastUpdated,
-                Category = project.Category,
+                Concept = project.Concept,
+                Category = project.Category
             };
 
             return View(projectDetailsViewModel);
+        }
+
+        [HttpGet]
+        public IActionResult AddProject()
+        {
+            var categories = projectCategoryService.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            return View(new ProjectDetailsViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult AddProject(ProjectDetailsViewModel model)
+        {
+            
+            if (ModelState.IsValid)
+            {
+                var newProjectId = projectService.AddProjectAsConcept(new Project
+                {
+                    Title = model.Title,
+                    Category = new ProjectCategory
+                    {
+                        Id = model.Category.Id,
+                        Name = model.Category.Name
+                    },
+                    Tags = model.Tags,
+                    Description = model.Description,
+                    ProjectFile = model.ProjectFile,
+                    LastUpdated = DateTime.Now
+                });
+
+                return RedirectToAction("ProjectDetails", new { id = newProjectId }); 
+            }
+
+            var categories = projectCategoryService.GetAllCategories();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            return View(model); 
         }
     }
 }

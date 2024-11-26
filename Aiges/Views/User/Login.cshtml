@@ -1,0 +1,31 @@
+﻿@model Aiges.MVC.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h2 class="text-center">Login</h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" class="form-control" required />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="Password">Password</label>
+                    <input type="password" id="Password" name="Password" class="form-control" required />
+                </div>
+                <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </div>
+            </form>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="text-danger">@Html.ValidationSummary()</div>
+            }
+        </div>
+    </div>
+</div>

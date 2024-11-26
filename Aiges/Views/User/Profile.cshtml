@@ -1,0 +1,57 @@
+﻿@model Aiges.MVC.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/ProjectPage.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- User Info Section -->
+ 
+        @if (Model.Admin)
+        {
+            <h2>Admin User</h2>
+        }     
+
+        <div class="profile-info">
+            <h1>Your Profile</h1>
+            <p><strong>Username:</strong> @Model.Username</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Member Since:</strong> @Model.CreatedAt.ToString("MMMM d, yyyy")</p>
+        </div>
+
+        <hr />
+
+        <div class="projects-section">
+            <h2>Your Projects</h2>
+
+            @if (Model.Projects != null && Model.Projects.Any())
+            {
+                <div class="projects-wrapper">
+                    @foreach (var project in Model.Projects)
+                    {
+                        <div class="project-card">
+                            <h3>@project.Title</h3>              
+                            <p><strong>Tags:</strong> @project.Tags</p>
+
+                            @if (project.Concept)
+                            {
+                                <p class="concept-note">Concept!</p>
+                            }
+
+                            <a href="/Project/ProjectDetails?id=@project.Id" class="btn btn-primary">View Details</a>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>You have not created any projects yet.</p>
+            }
+        </div>
+    </div>
+</body>

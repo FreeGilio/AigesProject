@@ -7,13 +7,17 @@
 <body>
     <div class="container">      
         <div class="content">
-            <h2> @Model.Title</h2>
-            <h4> @Model.Tags</h4>
-            <h3>Category:</h3>
-            <h4>@Model.Category.Name</h4>
-            <h3>@Model.Description</h3>   
-            <h4>@Model.ProjectFile</h4>
-            <h4>@Model.LastUpdated</h4>
+            <h1>@Model.Title</h1>
+            <p>@Model.Description</p>
+            <p><strong>Category:</strong> @(Model.Category != null ? Model.Category.Name : "Uncategorized")</p>
+            <p><strong>Tags:</strong> @Model.Tags</p>
+            <p><strong>Last Updated:</strong> @Model.LastUpdated.ToString("MMMM d, yyyy")</p>
+            <p>@Model.ProjectFile<p>
+
+            @if (Model.Concept)
+            {
+            <p><strong>Note:</strong> This project is still in concept phase.</p>
+            }
         </div>
     </div>
 </body>
