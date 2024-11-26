@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using Aiges.Core.DTO;
 using Aiges.Core.Models;
 using Aiges.DataAccess.DB;
+using System.Data;
 
 namespace Aiges.DataAccess.Repositories
 {
@@ -39,7 +40,7 @@ namespace Aiges.DataAccess.Repositories
                     pc.name 
                 FROM 
                     Project p
-                JOIN
+                LEFT JOIN
                     ProjectCategory pc ON p.category_id = pc.Id
                 WHERE 
                     p.id = @Id";
@@ -77,7 +78,7 @@ namespace Aiges.DataAccess.Repositories
                     pc.name 
                 FROM 
                     Project p
-                JOIN
+                LEFT JOIN
                     ProjectCategory pc ON p.category_id = pc.Id
                 WHERE 
                     concept = 0;";
@@ -88,6 +89,52 @@ namespace Aiges.DataAccess.Repositories
                     while (reader.Read())
                     {
                         projects.Add(MapProjectDtoFromReader(reader));
+                    }
+                }
+            });
+
+            return projects;
+        }
+
+        public List<ProjectDto> GetConceptProjects(int userId)
+        {
+            List<ProjectDto> projects = new List<ProjectDto>();
+
+            databaseConnection.StartConnection(connection =>
+            {
+                string sql = @"
+            SELECT
+                p.id as Id,
+                p.title,
+                p.tags,
+                p.description,
+                p.concept,
+                p.projectfile,
+                p.last_updated,
+                pc.id as CategoryId,
+                pc.name
+            FROM 
+                Project p
+            LEFT JOIN
+                ProjectCategory pc ON p.category_id = pc.Id
+            WHERE 
+                p.concept = 1
+                AND EXISTS (
+                    SELECT 1
+                    FROM [User] u
+                    WHERE u.id = @UserId AND u.admin = 1
+                );";
+
+                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@UserId", userId));
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            projects.Add(MapProjectDtoFromReader(reader));
+                        }
                     }
                 }
             });
@@ -165,6 +212,39 @@ namespace Aiges.DataAccess.Repositories
             return newProjectId;
         }
 
+        public void AddUsersToProject(int projectId, List<int> userIds)
+        {
+            databaseConnection.StartConnection(connection =>
+            {
+                string insertSql = @"
+                    INSERT INTO Collaborator (project_id, user_id)
+                    SELECT @ProjectId, Id
+                    FROM @UserIds
+                    WHERE Id NOT IN (
+                        SELECT user_id 
+                        FROM Collaborator 
+                        WHERE project_id = @ProjectId
+                    )";
+
+                using (SqlCommand insertCommand = new SqlCommand(insertSql, (SqlConnection)connection))
+                {
+                    insertCommand.Parameters.Add(new SqlParameter("@ProjectId", projectId));
+
+                    if (userIds.Any())
+                    {
+                        var userIdParameter = new SqlParameter("@UserIds", SqlDbType.Structured)
+                        {
+                            TypeName = "dbo.IntList",
+                            Value = CreateDataTableFromIds(userIds)
+                        };
+                        insertCommand.Parameters.Add(userIdParameter);
+                    }
+
+                    insertCommand.ExecuteNonQuery();
+                }
+            });
+        }
+
         private ProjectDto MapProjectDtoFromReader(SqlDataReader reader)
         {
             return new ProjectDto
@@ -183,6 +263,19 @@ namespace Aiges.DataAccess.Repositories
                 }
             };
 
+        }
+
+        private DataTable CreateDataTableFromIds(List<int> ids)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Id", typeof(int));
+
+            foreach (var id in ids)
+            {
+                table.Rows.Add(id);
+            }
+
+            return table;
         }
     }
 }

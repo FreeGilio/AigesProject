@@ -68,7 +68,8 @@ namespace Aiges.MVC.Controllers
         public IActionResult Profile()
         {
             User user = userService.GetUserById(HttpContext.Session.GetInt32("uId")); 
-            var projects = projectService.GetAllProjectsFromUser(user.Id); 
+            var userProjects = projectService.GetAllProjectsFromUser(user.Id);
+            var conceptProjects = projectService.GetConceptProjects(user.Id);
 
             ProfileViewModel profileViewModel = new ProfileViewModel
             {
@@ -76,7 +77,22 @@ namespace Aiges.MVC.Controllers
                 Email = user.Email,
                 CreatedAt = user.CreatedAt,
                 Admin = user.Admin,
-                Projects = projects.Select(project => new ProjectDetailsViewModel
+                UserProjects = userProjects.Select(project => new ProjectDetailsViewModel
+                {
+                    Id = project.Id,
+                    Title = project.Title,
+                    Description = project.Description,
+                    Tags = project.Tags,
+                    LastUpdated = project.LastUpdated,
+                    Concept = project.Concept,
+                    Category = new ProjectCategory
+                    {
+                        Id = project.Category.Id,
+                        Name = project.Category.Name
+                    }
+                }).ToList(),
+
+                ConceptProjects = conceptProjects.Select(project => new ProjectDetailsViewModel
                 {
                     Id = project.Id,
                     Title = project.Title,

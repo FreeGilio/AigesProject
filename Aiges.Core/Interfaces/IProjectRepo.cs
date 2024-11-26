@@ -17,5 +17,9 @@ namespace Aiges.Core.Interfaces
 
         List<ProjectDto> GetAllProjectsFromUser(int userId);
 
+        List<ProjectDto> GetConceptProjects(int userId);
+
+        void AddUsersToProject(int projectId, List<int> userIds);
+
     }
 }

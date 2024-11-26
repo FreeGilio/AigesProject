@@ -8,6 +8,9 @@
         public DateTime CreatedAt { get; set; }
 
         public bool Admin { get; set; }
-        public List<ProjectDetailsViewModel> Projects { get; set; }
+
+        public List<ProjectDetailsViewModel> UserProjects { get; set; }
+
+        public List<ProjectDetailsViewModel> ConceptProjects { get; set; }
     }
 }

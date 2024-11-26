@@ -60,31 +60,38 @@ namespace Aiges.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProject(ProjectDetailsViewModel model)
+        public IActionResult AddProject(ProjectDetailsViewModel newProject)
         {
-            
+            int? loggedInUserId = HttpContext.Session.GetInt32("uId");   
+
             if (ModelState.IsValid)
             {
-                var newProjectId = projectService.AddProjectAsConcept(new Project
+                if (loggedInUserId != null && !newProject.UserIds.Contains(loggedInUserId.Value))
                 {
-                    Title = model.Title,
+                    newProject.UserIds.Add(loggedInUserId.Value);
+                }
+
+                int newProjectId = projectService.AddProjectAsConcept(new Project
+                {
+                    Title = newProject.Title,
                     Category = new ProjectCategory
                     {
-                        Id = model.Category.Id,
-                        Name = model.Category.Name
+                        Id = newProject.Category.Id,
+                        Name = newProject.Category.Name
                     },
-                    Tags = model.Tags,
-                    Description = model.Description,
-                    ProjectFile = model.ProjectFile,
-                    LastUpdated = DateTime.Now
+                    Tags = newProject.Tags,
+                    Description = newProject.Description,
+                    ProjectFile = newProject.ProjectFile
                 });
+
+                projectService.AddUsersToProject(newProjectId, newProject.UserIds);
 
                 return RedirectToAction("ProjectDetails", new { id = newProjectId }); 
             }
 
             var categories = projectCategoryService.GetAllCategories();
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
-            return View(model); 
+            return View(newProject); 
         }
     }
 }

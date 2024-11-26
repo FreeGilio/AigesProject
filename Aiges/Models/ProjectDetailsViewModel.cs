@@ -19,7 +19,9 @@ namespace Aiges.MVC.Models
 
         public bool Concept {  get; set; }
 
-        public ProjectCategory Category { get; set; } 
+        public ProjectCategory Category { get; set; }
+
+        public List<int> UserIds { get; set; } = new List<int>();
 
 
 

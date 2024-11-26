@@ -22,7 +22,6 @@ namespace Aiges.DataAccess.DB
             {
                 connection.Open();
                 action.Invoke(connection);
-                connection.Close();
             }
         }
     }

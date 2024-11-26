@@ -25,9 +25,11 @@ namespace Aiges.Core.Models
 
         public ProjectCategory Category { get; set; }
 
+        public List<int> UserIds { get; set; } = new List<int>();
+
         public Project() { }
 
-        public Project(int id, string title, string tags, string description, bool concept, string projectFile, DateTime lastUpdated, ProjectCategory category)
+        public Project(int id, string title, string tags, string description, bool concept, string projectFile, DateTime lastUpdated, ProjectCategory category, List<int> userIds)
         {
             Id = id;
             Title = title;
@@ -37,6 +39,7 @@ namespace Aiges.Core.Models
             ProjectFile = projectFile;
             LastUpdated = lastUpdated;
             Category = category;
+            UserIds = userIds;           
         }
 
         public Project(ProjectDto projectDto)
@@ -49,6 +52,7 @@ namespace Aiges.Core.Models
             ProjectFile = projectDto.ProjectFile;
             LastUpdated = projectDto.LastUpdated;
             Category = projectDto.Category;
+            UserIds = projectDto.UserIds ?? new List<int>();
         }
 
         public static List<Project> ConvertToProjects(List<ProjectDto> projectDtos)

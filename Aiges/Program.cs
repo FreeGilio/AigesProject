@@ -7,7 +7,7 @@ using Aiges.Core.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Register DatabaseConnection 
-builder.Services.AddSingleton<DatabaseConnection>(provider =>
+builder.Services.AddSingleton(provider =>
 {
     string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     return new DatabaseConnection(connectionString);

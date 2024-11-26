@@ -39,6 +39,17 @@ namespace Aiges.Core.Services
             return Project.ConvertToProjects(projects);
         }
 
+        public List<Project> GetConceptProjects(int? userId)
+        {
+            List<ProjectDto> projects = _projectRepo.GetConceptProjects(userId.Value);
+            return Project.ConvertToProjects(projects);
+        }
+
+        public void AddUsersToProject(int projectId, List<int> userIds)
+        {
+            _projectRepo.AddUsersToProject(projectId, userIds);
+        }
+
         public int AddProjectAsConcept(Project projectToAdd)
         {         
 

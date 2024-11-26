@@ -4,6 +4,10 @@
     ViewData["Title"] = "ProjectDetails";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/ProjectPage.css" asp-append-version="true" />
+</head>
+
 <body>
     <div class="container">      
         <div class="content">
@@ -16,7 +20,7 @@
 
             @if (Model.Concept)
             {
-            <p><strong>Note:</strong> This project is still in concept phase.</p>
+                <p class="concept-note"><strong>Note:</strong> This project is still in concept phase.</p>
             }
         </div>
     </div>

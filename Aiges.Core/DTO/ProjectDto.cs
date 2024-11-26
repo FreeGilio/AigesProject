@@ -25,6 +25,8 @@ namespace Aiges.Core.DTO
 
         public ProjectCategory Category { get; set; }
 
+        public List<int> UserIds { get; set; } = new List<int>();
+
         public ProjectDto() { }
 
         public ProjectDto(Project project)
@@ -37,6 +39,7 @@ namespace Aiges.Core.DTO
             ProjectFile = project.ProjectFile;
             LastUpdated = project.LastUpdated;
             Category = project.Category;
+            UserIds = project.UserIds;
         }      
     }
 }
