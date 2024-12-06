@@ -4,6 +4,7 @@ using Aiges.MVC.Models;
 using Aiges.Core.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Aiges.Core.DTO;
+using System.Reflection;
 
 namespace Aiges.MVC.Controllers
 {
@@ -34,6 +35,10 @@ namespace Aiges.MVC.Controllers
 
         public ActionResult ProjectDetails(int id)
         {
+            int? userId = HttpContext.Session.GetInt32("uId");
+
+            ViewData["AdminUser"] = userId;
+
             Project project = projectService.GetProjectById(id);
 
             ProjectDetailsViewModel projectDetailsViewModel = new ProjectDetailsViewModel
@@ -52,10 +57,10 @@ namespace Aiges.MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddProject()
+        public IActionResult AddProject(Project model)
         {
             var categories = projectCategoryService.GetAllCategories();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");        
             return View(new ProjectDetailsViewModel());
         }
 
@@ -69,6 +74,12 @@ namespace Aiges.MVC.Controllers
                 if (loggedInUserId != null && !newProject.UserIds.Contains(loggedInUserId.Value))
                 {
                     newProject.UserIds.Add(loggedInUserId.Value);
+                }
+
+                if (!newProject.HasTitle() || !newProject.HasDescription())
+                {
+                    ModelState.AddModelError(string.Empty, "Both Title and Description must be filled in.");
+                    return View(newProject);
                 }
 
                 int newProjectId = projectService.AddProjectAsConcept(new Project

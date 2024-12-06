@@ -13,6 +13,8 @@ namespace Aiges.Core.Interfaces
         ProjectDto GetProjectDtoById(int projectId);
 
         public int AddProjectAsConceptDto(ProjectDto projectToAdd);
+
+        void AcceptProjectDto(ProjectDto acceptedProject);
         List<ProjectDto> GetAllProjects();
 
         List<ProjectDto> GetAllProjectsFromUser(int userId);

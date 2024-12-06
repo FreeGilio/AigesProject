@@ -29,6 +29,16 @@ namespace Aiges.Core.Models
 
         public Project() { }
 
+        public bool HasTitle()
+        {
+            return !string.IsNullOrWhiteSpace(Title);
+        }
+
+        public bool HasDescription()
+        {
+            return !string.IsNullOrWhiteSpace(Description);
+        }
+
         public Project(int id, string title, string tags, string description, bool concept, string projectFile, DateTime lastUpdated, ProjectCategory category, List<int> userIds)
         {
             Id = id;

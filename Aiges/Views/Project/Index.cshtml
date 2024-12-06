@@ -4,6 +4,10 @@
     ViewData["Title"] = "Projects";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/ProjectPage.css?v=@DateTime.Now.Ticks" />
+</head>
+
 <body>
     <div class="project-wrapper">
         @foreach (var prj in Model)

@@ -1,7 +1,8 @@
 ﻿@model Aiges.MVC.Models.ProjectDetailsViewModel
 
 @{
-    ViewData["Title"] = "ProjectDetails";
+    ViewData["Title"] = "Project Details - Forum View";
+    bool isAdmin = ViewData["AdminUser"];
 }
 
 <head>
@@ -9,19 +10,51 @@
 </head>
 
 <body>
-    <div class="container">      
-        <div class="content">
+    <div class="forum-container">
+        <!-- Forum Header -->
+        <div class="forum-header">
             <h1>@Model.Title</h1>
-            <p>@Model.Description</p>
-            <p><strong>Category:</strong> @(Model.Category != null ? Model.Category.Name : "Uncategorized")</p>
-            <p><strong>Tags:</strong> @Model.Tags</p>
-            <p><strong>Last Updated:</strong> @Model.LastUpdated.ToString("MMMM d, yyyy")</p>
-            <p>@Model.ProjectFile<p>
-
-            @if (Model.Concept)
+            @if (Model.Category != null)
             {
-                <p class="concept-note"><strong>Note:</strong> This project is still in concept phase.</p>
+                <p><strong>Category:</strong>@Model.Category.Name</p>
+            }
+            else
+            {
+                <p><strong>Category:</strong>Uncategorized</p>
             }
         </div>
+
+        <!-- Forum Content -->
+        <div class="forum-content">
+            <div class="forum-post">
+                <p>@Model.Description</p>
+                <p><strong>Tags:</strong> @Model.Tags</p>
+                <p><strong>Last Updated:</strong> @Model.LastUpdated.ToString("MMMM d, yyyy")</p>
+                <p><strong>Project File:</strong> @Model.ProjectFile</p>
+
+                @if (Model.Concept)
+                {
+                    <div class="forum-concept-note">
+                        <strong>Note:</strong> This project is still in the concept phase.
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Forum Footer -->
+        <div class="forum-footer">
+            <a href="/Project/Edit?id=@Model.Id" class="btn btn-edit">Edit Project</a>
+            <a href="/Project/Delete?id=@Model.Id" class="btn btn-delete">Delete Project</a>
+        </div>
+
+        <!-- Admin Buttons -->
+         @if (Model.Concept)
+        {
+            <div class="forum-footer">
+                <a href="/Project/Accept?id=@Model.Id" class="btn btn-edit">Accept Concept</a>
+                <a href="/Project/Decline?id=@Model.Id" class="btn btn-delete">Decline Concept</a>
+            </div>
+        }      
     </div>
 </body>
+

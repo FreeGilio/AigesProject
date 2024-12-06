@@ -1,16 +1,17 @@
 ﻿using Aiges.Core.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aiges.MVC.Models
 {
     public class ProjectDetailsViewModel
     {
         public int Id { get; set; }
-
+        [Required]
         public string Title { get; set; }
 
         public string Tags { get; set; }
-
+        [Required]
         public string Description { get; set; }
 
         public string ProjectFile { get; set; }
@@ -24,6 +25,23 @@ namespace Aiges.MVC.Models
         public List<int> UserIds { get; set; } = new List<int>();
 
 
+        public bool HasTitle()
+        {
+            Project project = new Project
+            {
+                Title = this.Title,
+            };
+            return project.HasTitle();
+        }
+
+        public bool HasDescription()
+        {
+            Project project = new Project
+            {
+                Description = this.Description,
+            };
+            return project.HasDescription();
+        }
 
     }
 }

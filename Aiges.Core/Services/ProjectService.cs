@@ -57,5 +57,11 @@ namespace Aiges.Core.Services
             int newProjectId = _projectRepo.AddProjectAsConceptDto(projectDto); 
             return newProjectId;
         }
+
+        public void AcceptProject(Project acceptedProject)
+        {
+            ProjectDto projectDto = new ProjectDto(acceptedProject);
+            _projectRepo.AcceptProjectDto(projectDto);
+        }
     }
 }

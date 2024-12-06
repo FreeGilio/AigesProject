@@ -245,6 +245,20 @@ namespace Aiges.DataAccess.Repositories
             });
         }
 
+        public void AcceptProjectDto(ProjectDto acceptedProject)
+        {
+            databaseConnection.StartConnection(connection =>
+            {
+                string updateSql = "UPDATE project SET concept = 0 WHERE id = @Id";
+
+                using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                {
+                    updateCommand.Parameters.Add(new SqlParameter("@Id", acceptedProject.Id));
+                    updateCommand.ExecuteNonQuery();
+                }
+            });
+        }
+
         private ProjectDto MapProjectDtoFromReader(SqlDataReader reader)
         {
             return new ProjectDto

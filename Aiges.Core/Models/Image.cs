@@ -8,5 +8,12 @@ namespace Aiges.Core.Models
 {
     public class Image
     {
+        public int Id { get; set; }
+
+        public Project Project { get; set; }
+
+        public Event Event { get; set; }
+
+        public string Link { get; set; }
     }
 }
