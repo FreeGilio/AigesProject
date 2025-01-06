@@ -13,10 +13,12 @@ namespace Aiges.MVC.Controllers
 
         private readonly ProjectService projectService;
         private readonly ProjectCategoryService projectCategoryService;
-        public ProjectController(ProjectService projectService, ProjectCategoryService projectCategoryService)
+        private readonly UserService userService;
+        public ProjectController(ProjectService projectService, ProjectCategoryService projectCategoryService, UserService userService)
         {
             this.projectService = projectService;
             this.projectCategoryService = projectCategoryService;
+            this.userService = userService;
         }
 
         public IActionResult Index()
@@ -35,11 +37,12 @@ namespace Aiges.MVC.Controllers
 
         public ActionResult ProjectDetails(int id)
         {
-            int? userId = HttpContext.Session.GetInt32("uId");
 
-            ViewData["AdminUser"] = userId;
+            ViewData["IsAdmin"] = HttpContext.Session.GetInt32("uAdmin") == 1;
 
             Project project = projectService.GetProjectById(id);
+
+            User creator = userService.GetCreatorUser(id);
 
             ProjectDetailsViewModel projectDetailsViewModel = new ProjectDetailsViewModel
             {
@@ -50,7 +53,8 @@ namespace Aiges.MVC.Controllers
                 ProjectFile = project.ProjectFile,
                 LastUpdated = project.LastUpdated,
                 Concept = project.Concept,
-                Category = project.Category
+                Category = project.Category,
+                Creator = creator
             };
 
             return View(projectDetailsViewModel);
@@ -104,5 +108,23 @@ namespace Aiges.MVC.Controllers
             ViewBag.Categories = new SelectList(categories, "Id", "Name");
             return View(newProject); 
         }
+
+        [HttpPost]
+        public IActionResult Accept(int id)
+        {
+            Project project = projectService.GetProjectById(id);
+
+            if (project == null)
+            {
+                return NotFound("Project not found.");
+            }
+
+            project.Concept = false; 
+
+            projectService.AcceptProject(project);
+
+            return RedirectToAction("ProjectDetails", new { id = project.Id });
+        }
+
     }
 }

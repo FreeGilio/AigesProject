@@ -249,11 +249,12 @@ namespace Aiges.DataAccess.Repositories
         {
             databaseConnection.StartConnection(connection =>
             {
-                string updateSql = "UPDATE project SET concept = 0 WHERE id = @Id";
+                string updateSql = "UPDATE project SET concept = @Concept WHERE id = @Id";
 
                 using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
                 {
                     updateCommand.Parameters.Add(new SqlParameter("@Id", acceptedProject.Id));
+                    updateCommand.Parameters.Add(new SqlParameter("@Concept", acceptedProject.Concept));
                     updateCommand.ExecuteNonQuery();
                 }
             });

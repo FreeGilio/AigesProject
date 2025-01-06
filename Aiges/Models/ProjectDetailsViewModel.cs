@@ -1,4 +1,5 @@
-﻿using Aiges.Core.Models;
+﻿using Aiges.Core.DTO;
+using Aiges.Core.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 
@@ -23,6 +24,8 @@ namespace Aiges.MVC.Models
         public ProjectCategory Category { get; set; }
 
         public List<int> UserIds { get; set; } = new List<int>();
+
+        public User Creator { get; set; }
 
 
         public bool HasTitle()

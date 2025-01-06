@@ -53,5 +53,18 @@ namespace Aiges.Core.Services
 
             return new User(userDto);
         }
+
+        public User GetCreatorUser(int? projectId)
+        {
+            if (projectId == null)
+                throw new ArgumentNullException(nameof(projectId), "Project ID cannot be null.");
+
+            UserDto userDto = _userRepo.GetCreatorUserDto(projectId.Value);
+
+            if (userDto == null)
+                throw new Exception("No creator found for the specified project.");
+
+            return new User(userDto); 
+        }
     }
 }

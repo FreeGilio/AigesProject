@@ -1,6 +1,7 @@
 ﻿using Aiges.Core.Models;
 using Aiges.Core.Services;
 using Aiges.MVC.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aiges.MVC.Controllers
@@ -40,6 +41,7 @@ namespace Aiges.MVC.Controllers
                 {
                     HttpContext.Session.SetInt32("uId", output.Id);
                     HttpContext.Session.SetString("uName", output.Username);
+                    HttpContext.Session.SetInt32("uAdmin", output.Admin ? 1 : 0);
 
                     return RedirectToAction("Index", "Home");
                 }

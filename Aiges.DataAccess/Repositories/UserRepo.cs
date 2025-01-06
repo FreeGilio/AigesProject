@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aiges.Core.DTO;
 using Aiges.Core.Interfaces;
+using Aiges.Core.Models;
 using Aiges.DataAccess.DB;
 
 namespace Aiges.DataAccess.Repositories
@@ -88,6 +90,42 @@ namespace Aiges.DataAccess.Repositories
 
             return result;
         }
+
+        public UserDto GetCreatorUserDto(int projectId)
+        {
+            UserDto result = null;
+
+            databaseConnection.StartConnection(connection =>
+            {
+                string sql = @"
+                SELECT TOP 1 u.id AS Id, u.username AS Username, u.admin AS Admin
+                FROM Collaborator c
+                INNER JOIN [User] u ON c.user_id = u.id
+                WHERE c.project_id = @ProjectId
+                ORDER BY c.user_id";
+
+                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@ProjectId", projectId));
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = new UserDto
+                            {
+                                Id = (int)reader["id"],                             
+                                Username = (string)reader["username"],
+                                Admin = (bool)reader["admin"]
+                            };
+                        }
+                    }
+                }
+            });
+
+            return result;
+        }
+
 
         private UserDto MapUserFromReader(SqlDataReader reader)
         {

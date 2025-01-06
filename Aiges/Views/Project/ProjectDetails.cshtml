@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Project Details - Forum View";
-    bool isAdmin = ViewData["AdminUser"];
+    bool isAdmin = (bool)ViewData["IsAdmin"];
 }
 
 <head>
@@ -22,6 +22,7 @@
             {
                 <p><strong>Category:</strong>Uncategorized</p>
             }
+            <p><strong>Created by:</strong> @Model.Creator.Username</p>
         </div>
 
         <!-- Forum Content -->
@@ -48,13 +49,25 @@
         </div>
 
         <!-- Admin Buttons -->
-         @if (Model.Concept)
+        @if (isAdmin && Model.Concept)
         {
             <div class="forum-footer">
-                <a href="/Project/Accept?id=@Model.Id" class="btn btn-edit">Accept Concept</a>
-                <a href="/Project/Decline?id=@Model.Id" class="btn btn-delete">Decline Concept</a>
+                <form asp-action="Accept" method="post" style="display:inline;">
+                    <input type="hidden" name="id" value="@Model.Id" />
+                    <button type="submit" class="btn btn-edit" onclick="return confirm('Are you sure you want to accept this project?');">
+                        Accept Concept
+                    </button>
+                </form>
             </div>
         }      
     </div>
 </body>
+
+<script>
+    function confirmAction(url, message) {
+        if (confirm(message)) {
+            window.location.href = url;
+        }
+    }
+</script>
 

@@ -16,5 +16,7 @@ namespace Aiges.Core.Interfaces
         //public bool RegisterUser(string name, string email, string password);
 
         public UserDto GetUserDtoById(int id);
+
+        public UserDto GetCreatorUserDto(int projectId);
     }
 }
