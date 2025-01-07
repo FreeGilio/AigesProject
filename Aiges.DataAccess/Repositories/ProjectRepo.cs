@@ -203,7 +203,7 @@ namespace Aiges.DataAccess.Repositories
                     insertCommand.Parameters.Add(new SqlParameter("@Description", projectToAdd.Description));
                     insertCommand.Parameters.Add(new SqlParameter("@Concept", true));
                     insertCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToAdd.ProjectFile));
-                    insertCommand.Parameters.Add(new SqlParameter("@LastUpdated", DateTime.Now));
+                    insertCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToAdd.LastUpdated));
 
                     newProjectId = (int)insertCommand.ExecuteScalar();
 

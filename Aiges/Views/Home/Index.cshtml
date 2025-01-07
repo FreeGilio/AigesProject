@@ -1,8 +1,40 @@
-﻿@{
+﻿@model List<Aiges.MVC.Models.ProjectViewModel>
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<!-- Slideshow Container -->
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach (var project in Model)
+        {
+            <div class="carousel-item @(Model.IndexOf(project) == 0 ? "active" : "")">
+                <!-- Ensure projects have a preview image (e.g., first image or a default placeholder) -->
+                <!-- <img src="project.Image.FirstOrDefault()?.Link ?? " /images/placeholder.jpg"" class="d-block w-100" alt="..."> -->
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>@project.Title</h5>
+                    <p>@project.Tags</p>
+                    <a href="/Project/ProjectDetails?id=@project.Id" class="btn btn-light">View Details</a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Controls for the carousel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Description Section -->
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Aiges</h1>
+    <p>Explore the most up-to-date projects in our platform!</p>
 </div>

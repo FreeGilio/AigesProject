@@ -27,6 +27,12 @@ namespace Aiges.MVC.Models
 
         public User Creator { get; set; }
 
+        public List<Reply> Comments { get; set; } = new List<Reply>();
+
+        public AddCommentViewModel AddComment { get; set; }
+
+        public List<string> UploadedImages { get; set; } = new List<string>();
+
 
         public bool HasTitle()
         {

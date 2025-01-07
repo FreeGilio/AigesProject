@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lprlqsS45Bjwq/azuc69KsV6YvwGH+TIZxWY7swpFeM=",
+  "Hash": "JbwStlKs3Kxe44gO++xhXUGZnaaSrF6q2osJxIrMMds=",
   "Source": "Aiges.MVC",
   "BasePath": "_content/Aiges.MVC",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Aiges.MVC.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\Comments.css",
+      "SourceId": "Aiges.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\",
+      "BasePath": "_content/Aiges.MVC",
+      "RelativePath": "css/Comments.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Comments.css"
     },
     {
       "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\ProjectPage.css",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\NextWorldLogoWBackground.png",
+      "SourceId": "Aiges.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\",
+      "BasePath": "_content/Aiges.MVC",
+      "RelativePath": "images/NextWorldLogoWBackground.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\NextWorldLogoWBackground.png"
     },
     {
       "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\js\\site.js",

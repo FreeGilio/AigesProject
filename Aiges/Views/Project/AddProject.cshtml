@@ -13,6 +13,13 @@
             <input type="text" asp-for="Title" required class="form-control" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
+        <!-- Display creator's name -->
+        <div class="form-group">
+            <label for="Creator">Creator</label>
+            <input type="text" asp-for="Creator.Username" class="form-control" readonly />
+            <span asp-validation-for="Creator.Username" class="text-danger"></span>
+        </div>
+
 
         <div class="form-group">
             <label for="Tags">Tags</label>
@@ -39,6 +46,13 @@
             <label for="ProjectFile">Project File</label>
             <input type="text" asp-for="ProjectFile" class="form-control" />
         </div>
+
+        <div class="form-group">
+            <label for="UploadedImages">Upload Images</label>
+            <input type="file" name="UploadedImages" accept="image/*" class="form-control" multiple />
+            <span asp-validation-for="UploadedImages" class="text-danger"></span>
+        </div>
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

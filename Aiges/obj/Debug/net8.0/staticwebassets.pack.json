@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Aiges.MVC.bundle.scp.css"
     },
     {
+      "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\Comments.css",
+      "PackagePath": "staticwebassets\\css\\Comments.css"
+    },
+    {
       "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\css\\ProjectPage.css",
       "PackagePath": "staticwebassets\\css\\ProjectPage.css"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\NextWorldLogoWBackground.png",
+      "PackagePath": "staticwebassets\\images\\NextWorldLogoWBackground.png"
     },
     {
       "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\js\\site.js",

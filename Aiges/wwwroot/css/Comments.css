@@ -1,0 +1,95 @@
+﻿/* General Container Styling */
+#comments-container {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 800px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Each Comment Block */
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+    /* Comment Hover Effect */
+    .comment:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* User Name and Content */
+    .comment p {
+        margin: 5px 0;
+        color: #333;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+        /* User Name Bold */
+        .comment p strong {
+            font-weight: bold;
+            color: #555;
+        }
+
+    /* Buttons in Comment (e.g., Report) */
+    .comment button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 12px;
+        border: 1px solid #ff4d4f;
+        border-radius: 4px;
+        background-color: #ff4d4f;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Button Hover Effect */
+        .comment button:hover {
+            background-color: #cc0000;
+        }
+
+/* Add New Comment Input Styling */
+#newCommentContent {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Submit Button */
+#submitCommentButton {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    /* Submit Button Hover Effect */
+    #submitCommentButton:hover {
+        background-color: #0056b3;
+    }
+
+/* Empty Comments Message */
+.comment-container-empty {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+}

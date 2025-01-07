@@ -6,29 +6,123 @@
 
 <head>
     <link rel="stylesheet" href="~/css/ProjectPage.css" asp-append-version="true" />
+    <style>
+        /* Basic styles for the hamburger menu */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+            .hamburger-menu div {
+                width: 30px;
+                height: 3px;
+                background-color: #333;
+                border-radius: 5px;
+            }
+
+        .side-menu {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+            .side-menu a {
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: black;
+            }
+
+                .side-menu a:hover {
+                    background-color: #ddd;
+                }
+
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+        .profile-info, .projects-section, .concept-projects-section {
+            margin-top: 20px;
+        }
+
+        /* Basic styles for tabs and buttons */
+        .tabs {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .tab-button.active {
+                background-color: #0056b3;
+            }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- User Info Section -->
- 
+    <!-- Hamburger Menu (Mobile/Tablet Devices) -->
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <a href="#" onclick="showTab('profile')">Profile</a>
+        <a href="#" onclick="showTab('userProjects')">Your Projects</a>
         @if (Model.Admin)
         {
-            <h2>Admin User</h2>
-        }     
+            <a href="#" onclick="showTab('conceptProjects')">Concept Projects</a>
+        }
+    </div>
 
-        <div class="profile-info">
-            <h1>Your Profile</h1>
-            <p><strong>Username:</strong> @Model.Username</p>
-            <p><strong>Email:</strong> @Model.Email</p>
-            <p><strong>Member Since:</strong> @Model.CreatedAt.ToString("MMMM d, yyyy")</p>
+    <div class="container">
+        <h1>Your Profile</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('profile')">Profile</button>
+            <button class="tab-button" onclick="showTab('userProjects')">Your Projects</button>
+            @if (Model.Admin)
+            {
+                <button class="tab-button" onclick="showTab('conceptProjects')">Concept Projects</button>
+            }
         </div>
 
-        <hr />
+        <div id="profile" class="tab-content active">
+            <div class="profile-info">
+                @if (Model.Admin)
+                {
+                    <h2>Admin User</h2>
+                }
+                <p><strong>Username:</strong> @Model.Username</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Member Since:</strong> @Model.CreatedAt.ToString("MMMM d, yyyy")</p>
+            </div>
+        </div>
 
-        <div class="projects-section">
+        <div id="userProjects" class="tab-content">
             <h2>Your Projects</h2>
-
             @if (Model.UserProjects != null && Model.UserProjects.Any())
             {
                 <div class="projects-wrapper">
@@ -42,7 +136,7 @@
                                 <p class="concept-note">CONCEPT!</p>
                             }
                             <a href="/Project/ProjectDetails?id=@project.Id" class="btn btn-primary">View Details</a>
-                        </div>                      
+                        </div>
                     }
                 </div>
             }
@@ -54,11 +148,8 @@
 
         @if (Model.Admin)
         {
-            <hr />
-            <!-- Concept Projects Section -->
-            <div class="concept-projects-section">
+            <div id="conceptProjects" class="tab-content">
                 <h2>Projects in Concept</h2>
-
                 @if (Model.ConceptProjects != null && Model.ConceptProjects.Any())
                 {
                     <div class="projects-wrapper">
@@ -78,6 +169,37 @@
                     <p>There are no concept projects to check</p>
                 }
             </div>
-        }    
+        }
     </div>
+
+    <script>
+        // Toggles the visibility of the side menu on mobile devices
+        function toggleMenu() {
+            var menu = document.getElementById('side-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Switches between tabs based on button click
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            var buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(function (tab) {
+                tab.classList.remove('active');
+            });
+            buttons.forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+
+            // Set the clicked tab button as active
+            var button = Array.from(buttons).find(function (button) {
+                return button.textContent.toLowerCase().replace(" ", "") === tabId;
+            });
+            if (button) {
+                button.classList.add('active');
+            }
+        }
+    </script>
 </body>
