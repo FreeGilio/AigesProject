@@ -93,12 +93,13 @@ namespace Aiges.MVC.Controllers
 
 
         [HttpPost]
-        public IActionResult AddProject(ProjectDetailsViewModel newProject, List<IFormFile> uploadedFiles)
+        public IActionResult AddProject(ProjectDetailsViewModel newProject)
         {
             int? loggedInUserId = HttpContext.Session.GetInt32("uId");
 
             ModelState.Remove("Creator.Password");
             ModelState.Remove("Creator.Email");
+            ModelState.Remove("AddComment");
 
             if (ModelState.IsValid)
             {
@@ -129,25 +130,30 @@ namespace Aiges.MVC.Controllers
 
                 projectService.AddUsersToProject(newProjectId, newProject.UserIds);
 
-                if (uploadedFiles != null && uploadedFiles.Any())
+                if (newProject.Files != null && newProject.Files.Any())
                 {
-                    foreach (var file in uploadedFiles)
+                    string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+
+                    // Zorg ervoor dat de map bestaat
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    foreach (var file in newProject.Files)
                     {
                         if (file.Length > 0)
                         {
                             string uniqueFileName = $"{Guid.NewGuid()}_{file.FileName}";
-                            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", uniqueFileName);
+                            string filePath = Path.Combine(directoryPath, uniqueFileName);
 
-                            if (!Directory.Exists(path))
-                            {
-                                Directory.CreateDirectory(path);
-                            }
-
-                            using (var stream = new FileStream(path, FileMode.Create))
+                            // Bestand opslaan
+                            using (var stream = new FileStream(filePath, FileMode.Create))
                             {
                                 file.CopyTo(stream);
                             }
 
+                            // Afbeelding toevoegen aan de database of in je image service
                             imageService.AddImage(new Image
                             {
                                 ProjectId = newProjectId,
@@ -156,6 +162,7 @@ namespace Aiges.MVC.Controllers
                         }
                     }
                 }
+
 
                 return RedirectToAction("ProjectDetails", new { id = newProjectId }); 
             }

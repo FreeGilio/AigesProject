@@ -33,6 +33,8 @@ namespace Aiges.MVC.Models
 
         public List<string> UploadedImages { get; set; } = new List<string>();
 
+        public List<IFormFile> Files { get; set; } = new List<IFormFile>();
+
 
         public bool HasTitle()
         {
