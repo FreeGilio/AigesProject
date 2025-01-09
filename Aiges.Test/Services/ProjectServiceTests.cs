@@ -32,6 +32,42 @@ namespace Aiges.Test.Services
         }
 
         [Fact]
+        public void GetProjectById_InvalidId_ThrowsNullReferenceException()
+        {
+            // Arrange
+            var mockRepo = new Mock<IProjectRepo>();
+            mockRepo.Setup(repo => repo.GetProjectDtoById(It.IsAny<int>())).Returns((ProjectDto)null);
+            var service = new ProjectService(mockRepo.Object);
+
+            // Act & Assert
+            Assert.Throws<NullReferenceException>(() => service.GetProjectById(99));
+        }
+
+        [Fact]
+        public void AddUsersToProject_NullUserIds_ThrowsException()
+        {
+            // Arrange
+            var mockRepo = new Mock<IProjectRepo>();
+            var service = new ProjectService(mockRepo.Object);
+
+            // Act & Assert
+            Assert.Throws<InvalidProjectException>(() => service.AddUsersToProject(1, null));
+        }
+
+        [Fact]
+        public void AddUsersToProject_EmptyUserIds_ThrowsException()
+        {
+            // Arrange
+            var mockRepo = new Mock<IProjectRepo>();
+            var service = new ProjectService(mockRepo.Object);
+
+            // Act & Assert
+            Assert.Throws<InvalidProjectException>(() => service.AddUsersToProject(1, new List<int>()));
+        }
+
+
+
+        [Fact]
         public void GetAllProjects_ReturnsProjectList()
         {
             // Arrange
@@ -92,7 +128,52 @@ namespace Aiges.Test.Services
             var invalidProject = new Project { Title = "", Description = "Sample" };
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => service.AddProjectAsConcept(invalidProject));
+            Assert.Throws<InvalidProjectException>(() => service.AddProjectAsConcept(invalidProject));
+        }
+
+        [Fact]
+        public void AddProjectAsConcept_NullDescription_ThrowsException()
+        {
+            // Arrange
+            var service = new ProjectService(new Mock<IProjectRepo>().Object);
+            var invalidProject = new Project { Title = "Valid Title", Description = null };
+
+            // Act & Assert
+            Assert.Throws<InvalidProjectException>(() => service.AddProjectAsConcept(invalidProject));
+        }
+
+
+        [Fact]
+        public void ValidateProject_NullProject_ThrowsException()
+        {
+            // Arrange
+            var service = new ProjectService(new Mock<IProjectRepo>().Object);
+
+            // Act & Assert
+            Assert.Throws<InvalidProjectException>(() => service.ValidateProject(null));
+        }
+
+        [Fact]
+        public void AcceptProject_ValidProject_TransitionsConceptToFalse()
+        {
+            // Arrange
+            var mockRepo = new Mock<IProjectRepo>();
+            var service = new ProjectService(mockRepo.Object);
+
+            var projectToAccept = new Project
+            {
+                Id = 1,
+                Title = "Sample Project",
+                Concept = false,
+                Description = "Test Description"
+            };
+
+            // Act
+            service.AcceptProject(projectToAccept);
+
+            // Assert
+            Assert.False(projectToAccept.Concept);
+            mockRepo.Verify(repo => repo.AcceptProjectDto(It.IsAny<ProjectDto>()), Times.Once);
         }
 
 
