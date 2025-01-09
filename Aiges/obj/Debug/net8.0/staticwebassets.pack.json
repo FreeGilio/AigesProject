@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\NextWorldLogoWBackground.png"
     },
     {
+      "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png",
+      "PackagePath": "staticwebassets\\images\\cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png"
+    },
+    {
       "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

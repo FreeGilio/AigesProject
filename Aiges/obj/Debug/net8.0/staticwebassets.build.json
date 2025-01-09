@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JbwStlKs3Kxe44gO++xhXUGZnaaSrF6q2osJxIrMMds=",
+  "Hash": "ZWBBa37UBJavczxZQrW/jTi36djB19FCi16PYFxBDoI=",
   "Source": "Aiges.MVC",
   "BasePath": "_content/Aiges.MVC",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png",
+      "SourceId": "Aiges.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\",
+      "BasePath": "_content/Aiges.MVC",
+      "RelativePath": "images/cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png"
     },
     {
       "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\NextWorldLogoWBackground.png",
