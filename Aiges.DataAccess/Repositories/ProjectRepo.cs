@@ -212,6 +212,36 @@ namespace Aiges.DataAccess.Repositories
             return newProjectId;
         }
 
+        public void UpdateProjectDto(ProjectDto projectToUpdate)
+        {
+            databaseConnection.StartConnection(connection =>
+            {
+                string updateSql = @"
+            UPDATE project 
+            SET 
+                title = @Title, 
+                category_id = @Category_Id, 
+                tags = @Tags, 
+                description = @Description,  
+                projectfile = @ProjectFile, 
+                last_updated = @LastUpdated
+            WHERE id = @Id;";
+                using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                {
+                    updateCommand.Parameters.Add(new SqlParameter("@Title", projectToUpdate.Title));
+                    updateCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToUpdate.Category.Id));
+                    updateCommand.Parameters.Add(new SqlParameter("@Tags", projectToUpdate.Tags));
+                    updateCommand.Parameters.Add(new SqlParameter("@Description", projectToUpdate.Description));
+                    updateCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToUpdate.ProjectFile));
+                    updateCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToUpdate.LastUpdated));
+                    updateCommand.Parameters.Add(new SqlParameter("@Id", projectToUpdate.Id)); 
+
+                    updateCommand.ExecuteNonQuery(); 
+                }
+            });
+        }
+
+
         public void AddUsersToProject(int projectId, List<int> userIds)
         {
             databaseConnection.StartConnection(connection =>

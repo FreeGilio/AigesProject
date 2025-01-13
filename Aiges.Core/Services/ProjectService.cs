@@ -149,6 +149,27 @@ namespace Aiges.Core.Services
             }
         }
 
+        public void UpdateProject(Project projectToUpdate)
+        {
+            try
+            {
+                ValidateProject(projectToUpdate);
+
+                ProjectDto projectDto = new ProjectDto(projectToUpdate);
+                _projectRepo.UpdateProjectDto(projectDto);
+            }
+            catch (InvalidProjectException ex)
+            {
+                Console.WriteLine($"Project Validation Error: {ex.Message}");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected Error in UpdateProject: {ex.Message}");
+                throw;
+            }
+        }
+
 
         public void ValidateProject(Project project)
         {

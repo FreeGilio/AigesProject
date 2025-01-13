@@ -23,5 +23,7 @@ namespace Aiges.Core.Interfaces
 
         void AddUsersToProject(int projectId, List<int> userIds);
 
+        void UpdateProjectDto(ProjectDto projectToUpdate);
+
     }
 }

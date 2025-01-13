@@ -216,6 +216,125 @@ namespace Aiges.MVC.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult EditProject(int id)
+        {
+            try
+            {
+                int? loggedInUserId = HttpContext.Session.GetInt32("uId");
+
+                var creator = userService.GetUserById(loggedInUserId.Value);
+
+                Project project = projectService.GetProjectById(id);
+
+                if (project == null)
+                {
+                    return NotFound("Project not found.");
+                }
+
+                if (creator.Id != loggedInUserId)
+                {
+                    return Forbid(); 
+                }             
+              
+                var categories = projectCategoryService.GetAllCategories();
+                ViewBag.Categories = new SelectList(categories, "Id", "Name");
+
+                var projectViewModel = new ProjectDetailsViewModel
+                {
+                    Id = project.Id,
+                    Title = project.Title,
+                    Tags = project.Tags,
+                    Description = project.Description,
+                    ProjectFile = project.ProjectFile,
+                    LastUpdated = project.LastUpdated,
+                    Creator = creator,
+                    Category = project.Category,
+                    UploadedImages = imageService.GetImagesByProjectId(id).Select(img => img.Link).ToList()
+                };
+
+                return View(projectViewModel);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Edit GET: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EditProject(ProjectDetailsViewModel updatedProject)
+        {
+            try
+            {
+
+                ModelState.Remove("Creator.Password");
+                ModelState.Remove("Creator.Email");
+                ModelState.Remove("AddComment");
+
+                if (!ModelState.IsValid)
+                {
+                    var categories = projectCategoryService.GetAllCategories();
+                    ViewBag.Categories = new SelectList(categories, "Id", "Name");
+                    return View(updatedProject);
+                }
+
+                projectService.UpdateProject(new Project
+                {
+                    Id = updatedProject.Id,
+                    Title = updatedProject.Title,
+                    Tags = updatedProject.Tags,
+                    Description = updatedProject.Description,
+                    ProjectFile = updatedProject.ProjectFile,
+                    LastUpdated = DateTime.UtcNow,
+                    Category = new ProjectCategory
+                    {
+                        Id = updatedProject.Category.Id,
+                        Name = updatedProject.Category.Name
+                    }
+                });
+
+                if (updatedProject.Files != null && updatedProject.Files.Any())
+                {
+                    string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    foreach (var file in updatedProject.Files)
+                    {
+                        if (file.Length > 0)
+                        {
+                            string uniqueFileName = $"{Guid.NewGuid()}_{file.FileName}";
+                            string filePath = Path.Combine(directoryPath, uniqueFileName);
+
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                file.CopyTo(stream);
+                            }
+
+                            imageService.AddImage(new Image
+                            {
+                                ProjectId = updatedProject.Id,
+                                Link = $"/images/{uniqueFileName}"
+                            });
+                        }
+                    }
+                }
+
+                return RedirectToAction("ProjectDetails", new { id = updatedProject.Id });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Edit POST: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
+
         [HttpPost]
         public IActionResult Accept(int id)
         {

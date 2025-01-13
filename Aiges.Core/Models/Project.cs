@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Aiges.Core.CustomExceptions;
 using Aiges.Core.DTO;
 
 namespace Aiges.Core.Models
@@ -85,5 +86,6 @@ namespace Aiges.Core.Models
 
             return projects;
         }
+     
     }
 }
