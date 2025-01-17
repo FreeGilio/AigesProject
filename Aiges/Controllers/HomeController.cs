@@ -16,7 +16,7 @@ namespace Aiges.Controllers
         public HomeController(ILogger<HomeController> logger, ProjectService projectService)
         {
             _logger = logger;
-            this.projectService = projectService;  // Inject ProjectService for retrieving latest projects
+            this.projectService = projectService;  
         }
 
         public IActionResult Index()

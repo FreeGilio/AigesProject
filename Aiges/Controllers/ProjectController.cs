@@ -134,11 +134,6 @@ namespace Aiges.MVC.Controllers
                         newProject.UserIds.Add(loggedInUserId.Value);
                     }
 
-                    if (!newProject.HasTitle() || !newProject.HasDescription())
-                    {
-                        ModelState.AddModelError(string.Empty, "Both Title and Description must be filled in.");
-                        return View(newProject);
-                    }
 
                     int newProjectId = projectService.AddProjectAsConcept(new Project
                     {
@@ -207,7 +202,10 @@ namespace Aiges.MVC.Controllers
             {
                 Console.WriteLine($"Project Validation Error in AddProject POST: {ex.Message}");
                 ModelState.AddModelError(string.Empty, ex.Message);
-                return View(newProject);
+                var categories = projectCategoryService.GetAllCategories();
+                ViewBag.Categories = new SelectList(categories, "Id", "Name"); 
+
+                return View(newProject); 
             }
             catch (Exception ex)
             {
@@ -326,13 +324,22 @@ namespace Aiges.MVC.Controllers
 
                 return RedirectToAction("ProjectDetails", new { id = updatedProject.Id });
             }
+            catch (InvalidProjectException ex)
+            {
+                Console.WriteLine($"Project Validation Error in EditProject POST: {ex.Message}");
+                ModelState.AddModelError(string.Empty, ex.Message); 
+
+                var categories = projectCategoryService.GetAllCategories();
+                ViewBag.Categories = new SelectList(categories, "Id", "Name"); 
+                return View(updatedProject); 
+            }
+
             catch (Exception ex)
             {
                 Console.WriteLine($"Error in Edit POST: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
-
 
 
         [HttpPost]

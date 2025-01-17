@@ -56,11 +56,15 @@
             </div>
         </div>
 
-        @if (Context.Session.GetInt32("uId") == Model.Creator.Id)
+        @if (Context.Session.GetInt32("uId") == Model.Creator.Id || isAdmin)
         {
             <!-- Forum Footer -->
             <div class="forum-footer">
-                <a href="/Project/EditProject?id=@Model.Id" class="btn btn-edit">Edit Project</a>
+                @if (Context.Session.GetInt32("uId") == Model.Creator.Id)
+                {
+                    <a href="/Project/EditProject?id=@Model.Id" class="btn btn-edit">Edit Project</a>
+                }
+
                 <a href="/Project/Delete?id=@Model.Id" class="btn btn-delete">Delete Project</a>
             </div>
         }

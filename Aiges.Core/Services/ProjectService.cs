@@ -21,45 +21,57 @@ namespace Aiges.Core.Services
 
         public Project GetProjectById(int? projectId)
         {
+            if (!projectId.HasValue)
+            {
+                throw new InvalidProjectException("Project ID cannot be null.", new ArgumentNullException(nameof(projectId)));
+            }
+
             try
             {
-                if (!projectId.HasValue)
-                {
-                    throw new InvalidProjectException("Project ID cannot be null.", new ArgumentNullException(nameof(projectId)));
-                }
-
                 ProjectDto projectDto = _projectRepo.GetProjectDtoById(projectId.Value);
                 return new Project(projectDto);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Project Error: {ex.Message}");
-                throw; 
+                throw new InvalidProjectException(
+                    "Failed to retrieve project by ID. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected Error in GetProjectById: {ex.Message}");
-                throw; 
+                throw;
             }
         }
 
-
         public List<Project> GetAllProjects()
         {
-
-            List<ProjectDto> projects = _projectRepo.GetAllProjects();
-            return Project.ConvertToProjects(projects);
+            try
+            {
+                List<ProjectDto> projects = _projectRepo.GetAllProjects();
+                return Project.ConvertToProjects(projects);
+            }
+            catch (InvalidProjectRepoException ex)
+            {
+                throw new InvalidProjectException("Failed to fetch all projects. There was an error in the repository.", ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected Error in GetAllProjects: {ex.Message}");
+                throw;
+            }
         }
 
         public List<Project> GetAllProjectsFromUser(int? userId)
         {
+            if (!userId.HasValue)
+            {
+                throw new InvalidUserException("User ID cannot be null.");
+            }
+
             try
             {
-                if (!userId.HasValue)
-                {
-                    throw new InvalidUserException("User ID cannot be null.");
-                }
-
                 List<ProjectDto> projects = _projectRepo.GetAllProjectsFromUser(userId.Value);
 
                 if (projects == null || projects.Count == 0)
@@ -69,10 +81,12 @@ namespace Aiges.Core.Services
 
                 return Project.ConvertToProjects(projects);
             }
-            catch (InvalidUserException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"User Error: {ex.Message}");
-                throw;
+                throw new InvalidUserException(
+                    "Failed to retrieve projects for the user. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -83,20 +97,22 @@ namespace Aiges.Core.Services
 
         public List<Project> GetConceptProjects(int? userId)
         {
+            if (!userId.HasValue)
+            {
+                throw new InvalidProjectException("User ID cannot be null.", new ArgumentNullException(nameof(userId)));
+            }
+
             try
             {
-                if (!userId.HasValue)
-                {
-                    throw new InvalidProjectException("User ID cannot be null.", new ArgumentNullException(nameof(userId)));
-                }
-
                 List<ProjectDto> projects = _projectRepo.GetConceptProjects(userId.Value);
                 return Project.ConvertToProjects(projects);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Error Fetching Concept Projects: {ex.Message}");
-                throw;
+                throw new InvalidProjectException(
+                    "Failed to retrieve concept projects. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -107,19 +123,21 @@ namespace Aiges.Core.Services
 
         public void AddUsersToProject(int projectId, List<int> userIds)
         {
+            if (userIds == null || userIds.Count == 0)
+            {
+                throw new InvalidProjectException("User list cannot be null or empty.", new ArgumentNullException(nameof(userIds)));
+            }
+
             try
             {
-                if (userIds == null || userIds.Count == 0)
-                {
-                    throw new InvalidProjectException("User list cannot be null or empty.", new ArgumentNullException(nameof(userIds)));
-                }
-
                 _projectRepo.AddUsersToProject(projectId, userIds);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Error Adding Users to Project: {ex.Message}");
-                throw;
+                throw new InvalidProjectException(
+                    "Failed to add users to the project. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -130,17 +148,19 @@ namespace Aiges.Core.Services
 
         public int AddProjectAsConcept(Project projectToAdd)
         {
+            ValidateProject(projectToAdd);
+
             try
             {
-                ValidateProject(projectToAdd);
-
                 ProjectDto projectDto = new ProjectDto(projectToAdd);
                 return _projectRepo.AddProjectAsConceptDto(projectDto);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Project Validation Error: {ex.Message}");
-                throw;
+                throw new InvalidProjectException(
+                    "Failed to add the project as a concept. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -151,17 +171,19 @@ namespace Aiges.Core.Services
 
         public void UpdateProject(Project projectToUpdate)
         {
+            ValidateProject(projectToUpdate);
+
             try
             {
-                ValidateProject(projectToUpdate);
-
                 ProjectDto projectDto = new ProjectDto(projectToUpdate);
                 _projectRepo.UpdateProjectDto(projectDto);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Project Validation Error: {ex.Message}");
-                throw;
+                throw new InvalidProjectException(
+                    "Failed to update the project. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -169,7 +191,6 @@ namespace Aiges.Core.Services
                 throw;
             }
         }
-
 
         public void ValidateProject(Project project)
         {
@@ -189,20 +210,21 @@ namespace Aiges.Core.Services
             }
         }
 
-
         public void AcceptProject(Project acceptedProject)
         {
+            ValidateProject(acceptedProject);
+
             try
             {
-                ValidateProject(acceptedProject);
-
                 ProjectDto projectDto = new ProjectDto(acceptedProject);
                 _projectRepo.AcceptProjectDto(projectDto);
             }
-            catch (InvalidProjectException ex)
+            catch (InvalidProjectRepoException ex)
             {
-                Console.WriteLine($"Project Acceptance Error: {ex.Message}");
-                throw;
+                throw new InvalidProjectException(
+                    "Failed to accept the project. There was an error in the repository.",
+                    ex
+                );
             }
             catch (Exception ex)
             {
@@ -210,6 +232,6 @@ namespace Aiges.Core.Services
                 throw;
             }
         }
-
     }
+
 }

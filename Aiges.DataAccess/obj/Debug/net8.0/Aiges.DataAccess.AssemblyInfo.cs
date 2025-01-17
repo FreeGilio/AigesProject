@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Aiges.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bc3aa60877dd94eb0df64d33c5e4a3b0a474048")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2351ca4d1e4700476922dff462e9bfa454c4ec6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Aiges.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Aiges.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

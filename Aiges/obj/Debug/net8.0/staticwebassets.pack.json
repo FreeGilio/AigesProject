@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\2146104a-c8f9-4cc8-8fad-f7c6dfff48a5_AlbumWip.png",
+      "PackagePath": "staticwebassets\\images\\2146104a-c8f9-4cc8-8fad-f7c6dfff48a5_AlbumWip.png"
+    },
+    {
       "Id": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\NextWorldLogoWBackground.png",
       "PackagePath": "staticwebassets\\images\\NextWorldLogoWBackground.png"
     },

@@ -9,6 +9,7 @@ using Aiges.Core.DTO;
 using Aiges.Core.Models;
 using Aiges.DataAccess.DB;
 using System.Data;
+using Aiges.Core.CustomExceptions;
 
 namespace Aiges.DataAccess.Repositories
 {
@@ -21,13 +22,18 @@ namespace Aiges.DataAccess.Repositories
             this.databaseConnection = databaseConnection;
         }
 
+        // Todo, Make a new custom exception for Sql errors and throw it to a Service exception, which throws a new exception to the controller 
+        // and have the modelstate send a message
+
         public ProjectDto GetProjectDtoById(int projectId)
         {
-            ProjectDto result = null;
-
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string sql = @"
+                ProjectDto result = null;
+
+                databaseConnection.StartConnection(connection =>
+                {
+                    string sql = @"
                 SELECT
                     p.id as Id,
                     p.title,
@@ -44,28 +50,39 @@ namespace Aiges.DataAccess.Repositories
                     ProjectCategory pc ON p.category_id = pc.Id
                 WHERE 
                     p.id = @Id";
-                using SqlCommand command = new SqlCommand(sql, (SqlConnection)connection);
-                command.Parameters.Add(new SqlParameter("@Id", projectId));
+                    using SqlCommand command = new SqlCommand(sql, (SqlConnection)connection);
+                    command.Parameters.Add(new SqlParameter("@Id", projectId));
 
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {                                            
-                            result = MapProjectDtoFromReader(reader);                       
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            result = MapProjectDtoFromReader(reader);
+                        }
                     }
-                }
-            });
+                });
 
-            return result;
+                return result;
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while fetching a project by ID in GetProjectDtoById.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in GetProjectDtoById.", ex);
+            }
         }
 
         public List<ProjectDto> GetAllProjects()
         {
-            List<ProjectDto> projects = new List<ProjectDto>();
-
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string sql = @"
+                List<ProjectDto> projects = new List<ProjectDto>();
+
+                databaseConnection.StartConnection(connection =>
+                {
+                    string sql = @"
                 SELECT
                     p.id as Id,
                     p.title,
@@ -82,52 +99,7 @@ namespace Aiges.DataAccess.Repositories
                     ProjectCategory pc ON p.category_id = pc.Id
                 WHERE 
                     concept = 0;";
-                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        projects.Add(MapProjectDtoFromReader(reader));
-                    }
-                }
-            });
-
-            return projects;
-        }
-
-        public List<ProjectDto> GetConceptProjects(int userId)
-        {
-            List<ProjectDto> projects = new List<ProjectDto>();
-
-            databaseConnection.StartConnection(connection =>
-            {
-                string sql = @"
-            SELECT
-                p.id as Id,
-                p.title,
-                p.tags,
-                p.description,
-                p.concept,
-                p.projectfile,
-                p.last_updated,
-                pc.id as CategoryId,
-                pc.name
-            FROM 
-                Project p
-            LEFT JOIN
-                ProjectCategory pc ON p.category_id = pc.Id
-            WHERE 
-                p.concept = 1
-                AND EXISTS (
-                    SELECT 1
-                    FROM [User] u
-                    WHERE u.id = @UserId AND u.admin = 1
-                );";
-
-                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
-                {
-                    command.Parameters.Add(new SqlParameter("@UserId", userId));
+                    using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -136,19 +108,86 @@ namespace Aiges.DataAccess.Repositories
                             projects.Add(MapProjectDtoFromReader(reader));
                         }
                     }
-                }
-            });
+                });
 
-            return projects;
+                return projects;
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while fetching all projects in GetAllProjects.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in GetAllProjects.", ex);
+            }
+        }
+
+        public List<ProjectDto> GetConceptProjects(int userId)
+        {
+            try
+            {
+                List<ProjectDto> projects = new List<ProjectDto>();
+
+                databaseConnection.StartConnection(connection =>
+                {
+                    string sql = @"
+                SELECT
+                    p.id as Id,
+                    p.title,
+                    p.tags,
+                    p.description,
+                    p.concept,
+                    p.projectfile,
+                    p.last_updated,
+                    pc.id as CategoryId,
+                    pc.name
+                FROM 
+                    Project p
+                LEFT JOIN
+                    ProjectCategory pc ON p.category_id = pc.Id
+                WHERE 
+                    p.concept = 1
+                    AND EXISTS (
+                        SELECT 1
+                        FROM [User] u
+                        WHERE u.id = @UserId AND u.admin = 1
+                    );";
+
+                    using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@UserId", userId));
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                projects.Add(MapProjectDtoFromReader(reader));
+                            }
+                        }
+                    }
+                });
+
+                return projects;
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while fetching concept projects in GetConceptProjects.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in GetConceptProjects.", ex);
+            }
         }
 
         public List<ProjectDto> GetAllProjectsFromUser(int userId)
         {
-            List<ProjectDto> projects = new List<ProjectDto>();
-
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string sql = @"
+                List<ProjectDto> projects = new List<ProjectDto>();
+
+                databaseConnection.StartConnection(connection =>
+                {
+                    string sql = @"
                 SELECT
                     p.id as Id,
                     p.title,
@@ -168,77 +207,108 @@ namespace Aiges.DataAccess.Repositories
                 WHERE 
                     cb.user_id = @UserId;";
 
-                using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
-                {
-                    command.Parameters.Add(new SqlParameter("@UserId", userId));
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(sql, (SqlConnection)connection))
                     {
-                        while (reader.Read())
+                        command.Parameters.Add(new SqlParameter("@UserId", userId));
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            projects.Add(MapProjectDtoFromReader(reader));
+                            while (reader.Read())
+                            {
+                                projects.Add(MapProjectDtoFromReader(reader));
+                            }
                         }
                     }
-                }
-            });
+                });
 
-            return projects;
+                return projects;
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while fetching all user projects in GetAllProjectsFromUser.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in GetAllProjectsFromUser.", ex);
+            }
         }
 
         public int AddProjectAsConceptDto(ProjectDto projectToAdd)
         {
-            int newProjectId = 0;
-
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string insertSql = @"
-                          INSERT INTO project (title, category_id, tags, description, concept, projectfile, last_updated) 
-                          OUTPUT INSERTED.id
-                          VALUES (@Title, @Category_Id, @Tags, @Description, @Concept, @ProjectFile, @LastUpdated);";
-                using (SqlCommand insertCommand = new SqlCommand(insertSql, (SqlConnection)connection))
+                int newProjectId = 0;
+
+                databaseConnection.StartConnection(connection =>
                 {
-                    insertCommand.Parameters.Add(new SqlParameter("@Title", projectToAdd.Title));
-                    insertCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToAdd.Category.Id));
-                    insertCommand.Parameters.Add(new SqlParameter("@Tags", projectToAdd.Tags));
-                    insertCommand.Parameters.Add(new SqlParameter("@Description", projectToAdd.Description));
-                    insertCommand.Parameters.Add(new SqlParameter("@Concept", true));
-                    insertCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToAdd.ProjectFile));
-                    insertCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToAdd.LastUpdated));
+                    string insertSql = @"
+                   INSERT INTO project (title, category_id, tags, description, concept, projectfile, last_updated) 
+                   OUTPUT INSERTED.id
+                   VALUES (@Title, @Category_Id, @Tags, @Description, @Concept, @ProjectFile, @LastUpdated);";
+                    using (SqlCommand insertCommand = new SqlCommand(insertSql, (SqlConnection)connection))
+                    {
+                        insertCommand.Parameters.Add(new SqlParameter("@Title", projectToAdd.Title));
+                        insertCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToAdd.Category.Id));
+                        insertCommand.Parameters.Add(new SqlParameter("@Tags", projectToAdd.Tags));
+                        insertCommand.Parameters.Add(new SqlParameter("@Description", projectToAdd.Description));
+                        insertCommand.Parameters.Add(new SqlParameter("@Concept", true));
+                        insertCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToAdd.ProjectFile));
+                        insertCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToAdd.LastUpdated));
 
-                    newProjectId = (int)insertCommand.ExecuteScalar();
+                        newProjectId = (int)insertCommand.ExecuteScalar();
+                    }
+                });
 
-                }
-            });
-            return newProjectId;
+                return newProjectId;
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while adding a concept project in AddProjectAsConceptDto.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in AddProjectAsConceptDto.", ex);
+            }
         }
 
         public void UpdateProjectDto(ProjectDto projectToUpdate)
         {
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string updateSql = @"
-            UPDATE project 
-            SET 
-                title = @Title, 
-                category_id = @Category_Id, 
-                tags = @Tags, 
-                description = @Description,  
-                projectfile = @ProjectFile, 
-                last_updated = @LastUpdated
-            WHERE id = @Id;";
-                using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                databaseConnection.StartConnection(connection =>
                 {
-                    updateCommand.Parameters.Add(new SqlParameter("@Title", projectToUpdate.Title));
-                    updateCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToUpdate.Category.Id));
-                    updateCommand.Parameters.Add(new SqlParameter("@Tags", projectToUpdate.Tags));
-                    updateCommand.Parameters.Add(new SqlParameter("@Description", projectToUpdate.Description));
-                    updateCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToUpdate.ProjectFile));
-                    updateCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToUpdate.LastUpdated));
-                    updateCommand.Parameters.Add(new SqlParameter("@Id", projectToUpdate.Id)); 
+                    string updateSql = @"
+                UPDATE project 
+                SET 
+                    title = @Title, 
+                    category_id = @Category_Id, 
+                    tags = @Tags, 
+                    description = @Description,  
+                    projectfile = @ProjectFile, 
+                    last_updated = @LastUpdated
+                WHERE id = @Id;";
+                    using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                    {
+                        updateCommand.Parameters.Add(new SqlParameter("@Title", projectToUpdate.Title));
+                        updateCommand.Parameters.Add(new SqlParameter("@Category_Id", projectToUpdate.Category.Id));
+                        updateCommand.Parameters.Add(new SqlParameter("@Tags", projectToUpdate.Tags));
+                        updateCommand.Parameters.Add(new SqlParameter("@Description", projectToUpdate.Description));
+                        updateCommand.Parameters.Add(new SqlParameter("@ProjectFile", projectToUpdate.ProjectFile));
+                        updateCommand.Parameters.Add(new SqlParameter("@LastUpdated", projectToUpdate.LastUpdated));
+                        updateCommand.Parameters.Add(new SqlParameter("@Id", projectToUpdate.Id));
 
-                    updateCommand.ExecuteNonQuery(); 
-                }
-            });
+                        updateCommand.ExecuteNonQuery();
+                    }
+                });
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while updating a project in UpdateProjectDto.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in UpdateProjectDto.", ex);
+            }
         }
 
 
@@ -277,17 +347,28 @@ namespace Aiges.DataAccess.Repositories
 
         public void AcceptProjectDto(ProjectDto acceptedProject)
         {
-            databaseConnection.StartConnection(connection =>
+            try
             {
-                string updateSql = "UPDATE project SET concept = @Concept WHERE id = @Id";
-
-                using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                    databaseConnection.StartConnection(connection =>
                 {
-                    updateCommand.Parameters.Add(new SqlParameter("@Id", acceptedProject.Id));
-                    updateCommand.Parameters.Add(new SqlParameter("@Concept", acceptedProject.Concept));
-                    updateCommand.ExecuteNonQuery();
-                }
-            });
+                    string updateSql = "UPDATE project SET concept = @Concept WHERE id = @Id";
+
+                    using (SqlCommand updateCommand = new SqlCommand(updateSql, (SqlConnection)connection))
+                    {
+                        updateCommand.Parameters.Add(new SqlParameter("@Id", acceptedProject.Id));
+                        updateCommand.Parameters.Add(new SqlParameter("@Concept", acceptedProject.Concept));
+                        updateCommand.ExecuteNonQuery();
+                    }
+                });
+            }
+            catch (SqlException ex)
+            {
+                throw new InvalidProjectRepoException("Error occurred while accepting a project in AcceptProjectDto.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidProjectRepoException("An unexpected error occurred in AcceptProjectDto.", ex);
+            }
         }
 
         private ProjectDto MapProjectDtoFromReader(SqlDataReader reader)

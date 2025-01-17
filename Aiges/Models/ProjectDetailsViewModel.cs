@@ -35,24 +35,5 @@ namespace Aiges.MVC.Models
 
         public List<IFormFile> Files { get; set; } = new List<IFormFile>();
 
-
-        public bool HasTitle()
-        {
-            Project project = new Project
-            {
-                Title = this.Title,
-            };
-            return project.HasTitle();
-        }
-
-        public bool HasDescription()
-        {
-            Project project = new Project
-            {
-                Description = this.Description,
-            };
-            return project.HasDescription();
-        }
-
     }
 }

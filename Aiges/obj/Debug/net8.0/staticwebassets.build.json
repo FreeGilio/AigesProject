@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZWBBa37UBJavczxZQrW/jTi36djB19FCi16PYFxBDoI=",
+  "Hash": "3u1UwSKybu7BRFn0D2vNJAOgTQ4tAWl79FTsm+lLlC8=",
   "Source": "Aiges.MVC",
   "BasePath": "_content/Aiges.MVC",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\2146104a-c8f9-4cc8-8fad-f7c6dfff48a5_AlbumWip.png",
+      "SourceId": "Aiges.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\",
+      "BasePath": "_content/Aiges.MVC",
+      "RelativePath": "images/2146104a-c8f9-4cc8-8fad-f7c6dfff48a5_AlbumWip.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\2146104a-c8f9-4cc8-8fad-f7c6dfff48a5_AlbumWip.png"
     },
     {
       "Identity": "D:\\Fontys\\Semester2\\ThirdTimesTheCharm\\AigesProject\\Aiges\\wwwroot\\images\\cc12a5ce-19be-4cb5-8841-1f20a4bb57c3_NWAlbum.png",
